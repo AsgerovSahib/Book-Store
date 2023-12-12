@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;600;700&family=Rubik:wght@400;500&display=swap");
+
+body{
+    background-color: var( --mainColor);
+}
+
+
+.book_aboutPage {
+  display: flex;
+  flex-direction: column;
+  gap: 109px;
+  padding-left: 13.25%;
+  padding-right: 11.38%;
+  padding-top: 173px;
+
+}
+
+.book_header {
+  display: flex;
+  gap: 136px;
+  justify-content: space-between;
+
+}
+
+.back_btn {
+  width: 100px;
+  height: 29px;
+  display: flex;
+  text-align: left;
+  justify-content: start;
+  align-items: center;
+  background-color: var(--mainOrange);
+  color: #fff;
+  padding: 12px 8px 10px 14px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 196.187%;
+  border: 0;
+  cursor: pointer;
+
+  margin-bottom: 80px;
+  border-radius: 4px;
+}
+
+.back_click {
+  text-decoration: none;
+}
+
+.book_text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.btn_year {
+  background-color: #2f80ed;
+  color: #fff;
+  font-family: var(--fontMontserrat);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 196.187%;
+  text-transform: uppercase;
+  max-height: 23px;
+  width: 69px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  border: 0;
+}
+
+.book_name {
+  color: var(--mainFontColor);
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 4px;
+  margin-top: 6px;
+}
+
+.book_dateAdd {
+  margin-top: 5px;
+  color: var(--mainFontColor);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.book_author {
+  margin-top: 8px;
+  color: var(--mainFontColor);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.book_infoText {
+  margin-top: 5px;
+  color: var(--mainFontColor);
+  font-family: var(--fontMontserrat);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 196.187%;
+  /* 35.314px */
+}
+
+.comment_form {
+  margin-top: 122px;
+  width: 100%;
+  display: flex;
+
+  max-height: 60px;
+}
+
+.comment_input {
+  max-width: 634px;
+  width: 100%;
+  padding-left: 38px;
+  height: 60px;
+  border-radius: 0px 0px 5px 5px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.15);
+  border: 0;
+}
+
+.send_btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 0px 5px 5px 0px;
+  background: var(--mainOrange);
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* COMMENT SECTION  STARTS */
+
+.book_comment{
+  display: flex;
+  flex-direction: column;
+  margin-top: 53px;
+  gap: 44px;
+}
+
+.comment_box{
+  padding: 28px 17.5px 29px 18px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+
+}
+
+.comment_head {
+  display: flex;
+  align-items: center;
+}
+
+
+.user_name {
+    color: var(--mainFontColor);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    font-family: "Rubik", sans-serif;
+    padding: 2px 3px;
+  }
+
+  .date {
+
+    color: var(--mainFontColor);
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .comment_title{
+
+    color: var(--mainFontColor);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    font-family: "Rubik", sans-serif;
+padding-top: 18px;
+
+
+
+  }
+  
+  
+  .nameDate_info {
+
+    display: flex;
+    gap: 46px;
+  }
+  
+  /* COMMENT SECTION FINSIH */
+
+
+.book_img {
+  max-width: 379px;
+  max-height: 529px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+
+.book{
+    max-width: 379px;
+    max-height: 529px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+
+.new {
+  position: absolute;
+  top: 0;
+  right: 17px;
+  width: 94px;
+  height: 28px;
+  background-color: #eb5757;
+  box-shadow: 0px 3px 8px rgba(225, 106, 0, 0.19);
+  padding: 7px 27px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+
+
+
+
+
+
