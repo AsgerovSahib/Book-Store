@@ -1,0 +1,126 @@
+body{
+   background-color:var(--mainColor);
+   font-family: var(--fontMontserrat);
+
+}
+.home_bookSection{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 120px;
+
+}
+.home_bookSection_left{
+    margin-top: 100px;
+    width: 23.6%;
+    display: flex;
+    flex-direction: column;
+    margin-left:14.9% ;
+    gap: 16px;
+}
+.home_bookSection_title{
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--mainFontColor);
+    line-height: 196.187%;
+
+}
+.home_bookSection_description{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 196.187%;
+    color: var(--mainFontColor);
+}
+.home_bookSection_button{
+    width: 212px;
+    height: 50px;
+    border: none;
+    background-color: var(--mainOrange);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 196.187%;
+    cursor: pointer;
+}
+.home_bookSection_right{
+    margin-right:6.3% ;
+}
+
+.home_catalogSection, .home_aboutSection, .home_deliverySection{
+ display: flex;
+ justify-content: center;
+ margin-top: 70px;
+}
+
+.home_catalogSection_div {
+ text-align: center;
+}
+
+.home_catalogSection_item{
+    width: 242px;
+    height: 76px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.25);
+    font-size: 14px;
+    color: var(--mainFontColor);
+    font-weight: 700;
+    line-height: 196.187px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
+}
+.home_catalogSection_body{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 36px;
+    margin: 50px 0;
+}
+.home_catalogSection_title, 
+.home_aboutSection_title, 
+.home_deliverySection_title{
+    color: var(--mainFontColor);
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 196.187%;
+    margin-bottom: 47px;
+}
+
+
+.home_aboutSection_div, 
+.home_deliverySection_div{
+    text-align: center;
+    width: 70%;
+}
+
+
+
+.home_aboutSection_body{
+    display: flex;
+    justify-content: space-between;
+}
+
+.home_aboutSection_item{
+    display: flex;
+    gap: 27px;
+    align-items: center;
+    justify-content: center;
+}
+.home_aboutSection_item h3{
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 196.187%;
+    color: var(--mainFontColor);
+}
+.home_aboutSection_item p{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 196.187%;
+
+}
+.home_deliverySection_desc{font-size: 12px;
+line-height:196.187%; 
+margin-bottom: 134px;}
+    
