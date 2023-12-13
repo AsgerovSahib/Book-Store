@@ -1,11 +1,449 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../../assets/css/reset.css" />
+    <link rel="stylesheet" href="../../assets/css/root.css" />
+    <link rel="stylesheet" href="../../assets/css/reset.css" />
     <link rel="stylesheet" href="../../assets/css/pages/admin.css" />
   </head>
-  <body></body>
+  <body>
+    <section class="leftSection">
+      <img
+        style="margin-left: 35px; margin-top: 94px"
+        src="../../assets/iconsFolder/whiteLogoAdminPage.svg"
+        alt=""
+      />
+
+      <div>
+        <img src="../../assets/iconsFolder/adminPageBooks.svg" alt="" />
+        <p>Home</p>
+      </div>
+      <div>
+        <img src="../../assets/iconsFolder/adminPageBooks.svg" alt="" />
+        <p>Books</p>
+      </div>
+      <div>
+        <img src="../../assets/iconsFolder/adminPageBooks.svg" alt="" />
+        <p>About</p>
+      </div>
+      <div>
+        <img src="../../assets/iconsFolder/adminPageBooks.svg" alt="" />
+        <p>Join Us</p>
+      </div>
+      <div>
+        <img src="../../assets/iconsFolder/adminPageBooks.svg" alt="" />
+        <p>Contact</p>
+      </div>
+      <div>
+        <img src="../../assets/iconsFolder/adminPageBooks.svg" alt="" />
+        <p>Logout</p>
+      </div>
+    </section>
+    <section class="rightSection">
+      <div class="JoinUs">
+        <img src="../../assets/iconsFolder/joinUs.svg" alt="" />
+        Admin
+      </div>
+      <div class="addBook">
+        <p class="p1">Add Book</p>
+        <div class="addBookin">
+          <p class="p2">Search book</p>
+          <div style="display: flex;">
+            <input type="text" placeholder="Dan Brown" />
+            <img class="img1" src="../../assets/iconsFolder/adminSearch.svg" alt="" />
+          </div>
+          <div class="toGuessDiv">
+            <div class="toGuessDivContent">
+              <img class="img2" src="../../assets/iconsFolder/AdminGreyOclock.svg" alt="" />
+              <p class="toGuess">Dan Brown Davinc</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="../../assets/css/reset.css" />
+    <link rel="stylesheet" href="../../assets/css/root.css" />
+    <link rel="stylesheet" href="../../assets/css/reset.css" />
+    <link rel="stylesheet" href="../../assets/css/pages/admin.css" />
+  </head>
+
+  <body>
+    <main>
+      <div id="admin_container" class="admin">
+        <div class="admin_sidebar">
+          <div class="sidebar_logo">
+            <img
+              src="../../assets/iconsFolder/whiteLogoAdminPage.svg"
+              alt="sidebar_logo"
+            />
+          </div>
+          <div class="sidebar_main">
+            <div class="sidebar_item">
+              <img
+                width="30"
+                src="../../assets/iconsFolder/adminPageBooks.svg"
+                alt="sidebar_minilogo"
+              />
+              <p class="sidebar_item_title">Home</p>
+            </div>
+            <div class="sidebar_item">
+              <img
+                width="30"
+                src="../../assets/iconsFolder/adminPageBooks.svg"
+                alt="sidebar_minilogo"
+              />
+              <p class="sidebar_item_title">Books</p>
+            </div>
+            <div class="sidebar_item">
+              <img
+                width="30"
+                src="../../assets/iconsFolder/adminPageBooks.svg"
+                alt="sidebar_minilogo"
+              />
+              <p class="sidebar_item_title">About</p>
+            </div>
+            <div class="sidebar_item">
+              <img
+                width="30"
+                src="../../assets/iconsFolder/adminPageBooks.svg"
+                alt="sidebar_minilogo"
+              />
+              <p class="sidebar_item_title">Join us</p>
+            </div>
+            <div class="sidebar_item">
+              <img
+                width="30"
+                src="../../assets/iconsFolder/adminPageBooks.svg"
+                alt="sidebar_minilogo"
+              />
+              <!-- <p class="sidebar_item_title">Contact</p> -->
+              <a class="sidebar_item_title" href="#ABC"> Contact </a>
+            </div>
+            <div class="sidebar_item">
+              <img
+                width="30"
+                src="../../assets/iconsFolder/adminPageBooks.svg"
+                alt="sidebar_minilogo"
+              />
+              <p class="sidebar_item_title" id="logout_button">Logout</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin_main">
+          <div class="admin_mobil_header">
+            <div class="admin_mobil_logo">
+              <img src="../assest/icons/logo/logo.svg" alt="" />
+            </div>
+            <div id="admin_mobil_menu" class="admin_mobil_menu">
+              <img src="../assest/icons/menu/menu.svg" alt="" />
+            </div>
+            <div id="admin_overlay" class="admin_overlay">
+              <div class="admin_overlay_body">
+                <div class="admin_overlay_header">
+                  <div>
+                    <img src="../assest/icons/logo/white-logo.svg" alt="" />
+                  </div>
+                  <div>
+                    <img
+                      id="admin_close_icon"
+                      class="admin_close_icon"
+                      src="../assest/icons/menu/close.svg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+
+                <div class="admin_overlay_main">
+                  <ul>
+                    <li class="admin_overlay_item">
+                      <img
+                        width="23"
+                        src="../assest/icons/admin/logo/sidebar_minilogo.svg"
+                        alt=""
+                      />
+                      <a href=""> Home </a>
+                    </li>
+                    <li class="admin_overlay_item">
+                      <img
+                        width="23"
+                        src="../assest/icons/admin/logo/sidebar_minilogo.svg"
+                        alt=""
+                      />
+                      <a href=""> About </a>
+                    </li>
+                    <li class="admin_overlay_item">
+                      <img
+                        width="23"
+                        src="../assest/icons/admin/logo/sidebar_minilogo.svg"
+                        alt=""
+                      />
+                      <a href=""> Join </a>
+                    </li>
+                    <li class="admin_overlay_item">
+                      <img
+                        width="23"
+                        src="../assest/icons/admin/logo/sidebar_minilogo.svg"
+                        alt=""
+                      />
+                      <a href=""> Contact </a>
+                    </li>
+                    <li class="admin_overlay_item">
+                      <img
+                        width="23"
+                        src="../assest/icons/admin/logo/sidebar_minilogo.svg"
+                        alt=""
+                      />
+                      <a href=""> Logout </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin_header">
+            <img
+              class="admin_user_icon"
+              src="../../assets/iconsFolder/joinUs.svg"
+              alt=""
+            />
+            <p class="admin_user_name">Admin</p>
+          </div>
+
+          <p class="admin_main_title">Add book</p>
+
+          <div class="admin_search">
+            <label class="admin_search_label" for=""> Search Book </label>
+
+            <form class="admin_search_form" action="">
+              <input
+                id="admin_search_input"
+                class="admin_search_input"
+                placeholder="Dan Brown"
+                type="text"
+              />
+              <button id="admin_search_button" class="admin_search_button">
+                <img src="../../assets/iconsFolder/adminSearch.svg" alt="" />
+              </button>
+            </form>
+            <div id="admin_result" class="admin_result">
+              <div id="loading-spinner" class="loading-spinner"></div>
+            </div>
+          </div>
+
+          <div class="admin_add_book">
+            <p class="admin_form_head_title">Book form</p>
+            <form class="admin_add_form" action="">
+              <div class="admin_form_item">
+                <label class="admin_form_label" for=""> Book Name </label>
+                <input
+                  id="book_name_input"
+                  class="admin_form_input"
+                  placeholder="Angels"
+                  type="text"
+                />
+              </div>
+              <div class="admin_form_item">
+                <label class="admin_form_label" for=""> Author Name </label>
+                <input
+                  id="book_author_input"
+                  class="admin_form_input"
+                  placeholder="Dan Brown"
+                  type="text"
+                />
+              </div>
+              <div class="admin_form_item">
+                <label class="admin_form_label" for=""> Book Image Url </label>
+                <input
+                  id="book_img_input"
+                  class="admin_form_input"
+                  placeholder="Alex Smith"
+                  type="text"
+                />
+              </div>
+              <div class="admin_form_item">
+                <label class="admin_form_label" for=""> Description </label>
+                <textarea
+                  id="book_description_textarea"
+                  class="admin_form_textarea"
+                  placeholder="We work without holidays and weekends! Resident...We work without holidays and weekends! Resident...We work without holidays and weekends! Resident..."
+                  id=""
+                  cols="30"
+                  rows="10"
+                ></textarea>
+              </div>
+              <div class="admin_form_item admin_check_item">
+                <input
+                  class="admin_check_input"
+                  type="checkbox"
+                  name=""
+                  id="check_input"
+                />
+                <label for="check_input">New</label>
+              </div>
+              <div class="admin_form_item">
+                <label class="admin_form_label" for="">
+                  Book Type
+
+                  <button id="add_book_type" class="add_book_type">+</button>
+
+                  <div id="admin_book_overlay" class="admin_book_overlay">
+                    <div class="admin_book_overlay_main">
+                      <div class="admin_form_item">
+                        <label for="type_input" class="admin_form_label"
+                          >Add Type</label
+                        >
+                        <input
+                          id="type_input"
+                          class="admin_form_input"
+                          type="text"
+                        />
+                      </div>
+                      <button id="add_type_button" class="add_book">
+                        Add Type
+                      </button>
+                    </div>
+                  </div>
+                </label>
+                <div class="admin_form_dropdown" id="">
+                  <div
+                    id="admin_dropdown_active_item"
+                    class="admin_dropdown_active_item"
+                  >
+                    Test
+                  </div>
+
+                  <div
+                    id="admin_dropdown_item_main"
+                    class="admin_dropdown_item_main"
+                  ></div>
+                </div>
+              </div>
+              <button id="add_book_btn" class="admin_add_button">Add</button>
+            </form>
+          </div>
+
+          <div class="admin_add_information">
+            <p class="admin_form_bold_title">About Store</p>
+            <form class="admin_add_form" action="">
+              <div class="admin_form_item">
+                <label class="admin_form_label" for=""> Title </label>
+                <input
+                  id="about_title_input"
+                  class="admin_form_input"
+                  placeholder="About Store"
+                  type="text"
+                />
+              </div>
+              <div class="admin_form_item">
+                <label class="admin_form_label" for="">
+                  Book Image Url - default link:
+                  https://img.freepik.com/premium-psd/3d-colorful-books_655503-1452.jpg
+                </label>
+                <input
+                  id="about_image_url_input"
+                  class="admin_form_input"
+                  placeholder="https://image:url/"
+                  type="text"
+                />
+              </div>
+              <div class="admin_form_item">
+                <label class="admin_form_label" for=""> Description </label>
+                <textarea
+                  id="about_description_textarea"
+                  class="admin_form_textarea"
+                  placeholder=" We work without holidays and weekends! Resident...We work without holidays and weekends! Resident...We work without holidays and weekends! Resident..."
+                  id=""
+                  cols="30"
+                  rows="10"
+                ></textarea>
+              </div>
+              <button id="add_info" class="admin_add_button">
+                About info add
+              </button>
+            </form>
+          </div>
+
+          <div class="admin_add_information">
+            <p class="admin_form_bold_title">Join Us</p>
+            <div class="table_scroll">
+              <table class="join_table">
+                <thead>
+                  <tr>
+                    <th class="mobil-id">#</th>
+                    <th>Full Name</th>
+                    <th>Email Address</th>
+                  </tr>
+                </thead>
+                <tbody id="join_tbody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="admin_add_information">
+            <p class="admin_form_bold_title">Books</p>
+
+            <div class="table_scroll">
+              <table class="books_table">
+                <thead>
+                  <tr>
+                    <th class="mobil-id">#</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Author</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="books_tbody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="ABC" class="admin_add_information">
+            <p class="admin_form_bold_title">Contact Us</p>
+            <div class="table_scroll">
+              <table class="contact_table">
+                <thead>
+                  <tr>
+                    <th class="mobil-id">#</th>
+                    <th>Full Name</th>
+                    <th>Email Address</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                  </tr>
+                </thead>
+                <tbody id="contact_tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../assest/js/dom/selector.js"></script>
+    <script src="../assest/js/dom/event.js"></script>
+    <script src="../assest/js/dom/admin-menu.js"></script>
+    <script src="../assest/js/custom_functions/function.js"></script>
+    <script type="module" src="../assest/js/contact.js"></script>
+    <script type="module" src="../assest/js/admin/login.js"></script>
+    <script src="../assest/js/admin/admin.js"></script>
+
+    <script src="../assest/js/dropdown/dropdown.js"></script>
+    <script type="module" src="../assest/js/admin/admin_firebase.js"></script>
+    <script type="module" src="../assest/js/helper/firebase-helper.js"></script>
+  </body>
 </html>
