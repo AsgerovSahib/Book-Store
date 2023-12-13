@@ -1,0 +1,52 @@
+body {
+  background-color: var(--mainColor);
+}
+
+.aboutStore_container{
+  display: flex;
+  flex-direction: column;
+  padding: 130px 70px;
+  padding-left: 13%;
+  width: 100%;
+}
+
+.about_store {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 73px;
+}
+.store_title {
+    color: var(--mainFontColor);
+  font-family: var(--fontMontserrat);
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 196.187%;
+}
+
+.book_content {
+  width: 74%;
+}
+
+.text {
+  font-family: var(--fontMontserrat);
+  color: var(--mainFontColor);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 196.187%;
+  width: 100%;
+}
+
+.books {
+  margin-top: 12px;
+  width: 60%;
+}
+
+.books img {
+  width: 570px;
+  height: 310px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
