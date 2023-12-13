@@ -1,0 +1,618 @@
+/* body {
+  display: flex;
+  font-family: Montserrat;
+}
+.leftSection {
+  background-color: var(--mainRed);
+  color: white;
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 196.187%;
+  width: 25%;
+  height: 100vh;
+}
+
+.leftSection div {
+  display: flex;
+  gap: 11px;
+}
+.rightSection {
+  background-color: var(--mainColor);
+  width: 75%;
+  height: 100vh;
+  padding: 33px;
+}
+.JoinUs {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 27px 60px 0 0;
+}
+.addBookin {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.addBook .p1 {
+  color: var(--mainFontColor);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 196.187%;
+  margin-top: 48px;
+}
+.addBook .p2 {
+  color: var(--mainFontColor);
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 196.187%;
+}
+.addBook input {
+  border-radius: 34px;
+  border: 2px solid rgba(57, 31, 0, 0.48);
+  background: #fff;
+  padding: 9px 16px 10px 33px;
+  width: 400px;
+  height: 44px;
+}
+.addBook input ::placeholder {
+  color: #adadad;
+  font-family: Preah Vihear;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.addBook .img1 {
+  margin-left: 7px;
+  padding: 10px 24px;
+  border-radius: 34px;
+  background: #ff8b00;
+}
+.addBook .toGuessDiv {
+  width: 388px;
+  height: 85px;
+  flex-shrink: 0;
+  border-radius: 35px;
+  background: #f1f0f0;
+}
+.addBook .toGuessDiv .toGuessDivContent {
+  display: flex;
+  align-items: center;
+  color: #bcbcbc;
+  font-family: Preah Vihear;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 343px;
+}
+.addBook .toGuessDiv .img2 {
+  padding: 20px 24px 12px 36px;
+} */
+
+.admin {
+  width: 100%;
+  display: flex;
+}
+
+/* admin sidebar start*/
+.admin_sidebar {
+  width: fit-content;
+  height: auto;
+  color: #ffffff;
+  background: #720418;
+  padding: 93px 42px 0px 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar_main {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 24px;
+}
+
+.sidebar_logo {
+  width: fit-content;
+}
+
+.sidebar_item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.sidebar_item img {
+width: 75px;
+height: 61px;
+}
+
+.sidebar_item_title {
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 196.187%;
+}
+
+/* admin sidebar end*/
+
+/* admin main start */
+
+.admin_main {
+  width: 100%;
+  padding: 48px 58px 48px 33px;
+  background: #fffaf5;
+}
+
+.admin_header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+}
+
+.admin_user_icon {
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.admin_user_name {
+  cursor: pointer;
+  color: #241400;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.admin_main_title {
+  color: #333;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 196.187%;
+  margin-bottom: 26px;
+}
+
+.admin_search_label {
+  color: #333;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 196.187%;
+  margin-bottom: 4px;
+}
+
+.admin_search_input {
+  max-width: 395px;
+  width: 100%;
+  height: 41px;
+  border-radius: 34px;
+  border: 2px solid rgba(57, 31, 0, 0.48);
+  background: #fff;
+  color: #adadad;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 33px;
+}
+
+.admin_search_form {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.admin_search_input::placeholder {
+  color: #adadad;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.admin_search_button {
+  width: 63px;
+  height: 40px;
+  border-radius: 34px;
+  background: #ff8b00;
+  border: 0;
+}
+
+.admin_result {
+  overflow-y: scroll;
+  display: none;
+  flex-direction: column;
+  padding: 20px 36px;
+  max-width: 388px;
+  width: 100%;
+  height: 185px;
+  border-radius: 35px;
+  background: #f1f0f0;
+  gap: 13px;
+  margin-top: 6px;
+}
+
+.admin_result.active {
+  display: flex !important;
+}
+
+.admin_result_item {
+  cursor: pointer;
+  display: flex;
+  gap: 24px;
+  color: #bcbcbc;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.admin_add_book {
+  margin-top: 81px;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.admin_add_information {
+  margin-top: 161px;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.admin_form_head_title {
+  color: #333;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 196.187%;
+}
+
+.admin_form_bold_title {
+  color: #333;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 196.187%;
+}
+
+.admin_add_form {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 30px 30px 30px;
+  border-radius: 20px;
+  background: #fff;
+  gap: 24px;
+}
+
+.admin_form_item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin_form_label {
+  color: #030102;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+}
+
+.admin_form_input {
+  height: 40px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #e2e6ee;
+  background: #fff;
+  box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+
+  /* daxilindeki textin stayli */
+  color: #030102;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.admin_form_input::placeholder {
+  color: #030102;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.admin_form_textarea {
+  min-height: 73px;
+  height: 73px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #e2e6ee;
+  background: #fff;
+  box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+
+  /* daxilindeki textin stayli */
+  color: #030102;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.admin_form_textarea::placeholder {
+  color: #030102;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.admin_add_button {
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 10px;
+  background: #ff8b00;
+
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: 0;
+}
+
+.join_table {
+  max-width: 512px;
+  width: 100%;
+}
+
+.books_table {
+  max-width: 100%;
+  width: 100%;
+}
+
+.contact_table {
+  max-width: 100%;
+  width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+thead {
+  background: #720418;
+  box-shadow: 0px -1px 0px 0px #e6e7e9 inset;
+}
+
+thead tr th {
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 115%;
+  letter-spacing: 0.14px;
+}
+
+tbody tr td {
+  text-align: center;
+  color: #05111a;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 115%;
+  letter-spacing: 0.14px;
+}
+
+.custom_td {
+  padding-left: 30px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 8px;
+}
+
+td,
+th {
+  text-align: left;
+  padding: 8px;
+  height: 48px;
+  vertical-align: middle;
+}
+
+tbody tr {
+  background: #fff;
+  box-shadow: 0px -1px 0px 0px #e6e7e9 inset, 0px 1px 0px 0px #e6e7e9 inset;
+}
+
+tr:nth-child(even) {
+  background-color: #f9fafc;
+  box-shadow: 0px -1px 0px 0px #e6e7e9 inset, 0px 1px 0px 0px #e6e7e9 inset;
+}
+
+.admin_mobil_header {
+  margin-bottom: 36px;
+  display: none;
+  justify-content: space-between;
+}
+
+.admin_overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: -100%;
+}
+
+.admin_overlay.show {
+  transition: 0.7s;
+  top: 0;
+  left: 0;
+  background: rgba(36, 20, 0, 0.7);
+}
+
+.admin_overlay_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin_close_icon {
+  width: 25px;
+  height: 25px;
+}
+
+.admin_overlay_body {
+  padding: 15px 9px 0px 11px;
+  width: 70%;
+  background: #720418;
+  height: 100%;
+}
+
+.admin_overlay_main {
+  display: flex;
+  flex-direction: column;
+  margin-top: 64px;
+}
+
+.admin_overlay_item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.admin_overlay_item a {
+  text-decoration: none;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 196.187%;
+}
+
+.admin_book_overlay {
+  display: none;
+}
+
+.admin_book_overlay.show {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex !important;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.admin_book_overlay_main {
+  width: 46.88%;
+  background: #fff;
+  padding: 70px 55.6px 35px 55.6px;
+  border-radius: 9px;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.add_book {
+  width: 100%;
+  border-radius: 10px;
+  padding: 12px 24px;
+  background: #ff8b00;
+  border: 0;
+  margin-top: 50px;
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.admin_check_item {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.admin_check_input {
+  width: 15px;
+  height: 15px;
+}
+
+.admin_book_img {
+  max-height: 36px;
+}
+
+.admin_delete_title {
+  cursor: pointer;
+}
+
+.description_body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.description_item {
+  text-align: center;
+  overflow-x: scroll;
+  max-width: 199px;
+  width: 100%;
+  height: 32px;
+}
+
+.delete_item {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.material-icons {
+  color: #720418;
+}
+
+.loading-spinner {
+  display: none; /* İlk olarak spinner'ı gizler */
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 35%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+/* admin main end */

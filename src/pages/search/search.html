@@ -12,12 +12,13 @@
     />
     <link rel="stylesheet" href="./src/assets/css/pages/home.css" /> -->
 
-    <link rel="stylesheet" href="../../assets/css/reset.css">
-    <link rel="stylesheet" href="../../assets/css/root.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css" />
+    <link rel="stylesheet" href="../../assets/css/root.css" />
     <link
       rel="stylesheet"
       href="../../assets/css/components/header_footer.css"
     />
+    <link rel="stylesheet" href="../../assets/css/pages/search.css">
     <!-- <link rel="stylesheet" href="../../assets/css/pages/home.css" /> -->
   </head>
   <body>
@@ -26,7 +27,6 @@
         <a href="./index.html">
           <!-- <img src="./src/assets/icons/icono.svg" alt="" /> -->
           <img src="../../assets/icons/icono.svg" alt="" />
-
         </a>
       </div>
       <div class="header_navbar_div">
@@ -74,6 +74,39 @@
         </div>
       </div>
     </header>
+
+    <section class="search_section">
+      <h2>Search</h2>
+      <div class="search_main">
+        <div class="search_form">
+          <form action="">
+            <input type="text" id="search_input" placeholder="Order in Chaos" />
+            <button id="search_button">Search</button>
+          </form>
+        </div>
+
+        <div class="slider slider-search">
+          <div class="direction">
+            <img
+              id="prev-search"
+              src="../assest/images/catalog-page-books/Vector 2.svg"
+              alt=""
+            />
+          </div>
+          <div id="formList-search">
+            <div id="list-search"></div>
+          </div>
+          <div class="direction">
+            <img
+              id="next-search"
+              src="../assest/images/catalog-page-books/Vector 3.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <main>
       <div class="sosial_media_div">
         <div class="social_media_components">
@@ -83,16 +116,13 @@
           <div class="social_media_icons">
             <a href="https://www.facebook.com/">
               <img
-               
                 src="../../assets/iconsFolder/social_media/facebook.svg"
                 alt=""
               />
             </a>
             <a href="https://twitter.com/">
               <img
-              
                 src="../../assets/iconsFolder/social_media/twitter.svg"
-
                 alt=""
               />
             </a>
