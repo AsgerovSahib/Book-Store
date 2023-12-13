@@ -1,0 +1,109 @@
+body{
+    background-color: var(--mainColor);
+}
+.catalog_sectionHead{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 123px;
+
+}
+
+.catalog_sectionHead_title{
+    font-size: 25px;
+    font-family: var(--fontMontserrat);
+    font-weight: 900;
+    line-height: 196.187%;
+    color: var(--mainFontColor);
+    margin-left:14.9% ;
+    margin-right: 18.8%;
+}
+.catalog_sectionHead_list{
+display: flex;
+flex-direction: row;
+gap: 40px;
+
+}
+.catalog_sectionHead a{
+    text-decoration: none;
+    color: var(--mainFontColor);
+}
+
+
+/* swiper css */
+
+.swiper {
+    width: 600px;
+    height: 300px;
+    padding-left: 30px;
+    padding-right: 30px;
+    /* background-color: blueviolet; */
+  }
+
+  .swiper-slide{
+    display: flex;
+    gap: 62px;
+    background-color: aqua;
+   
+  }
+
+  .swiper-slide-container{
+    width:184px ;
+    height: 332px;
+    display: flex;
+    background-color: #fff;
+    /* flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+     */
+   
+
+  }
+.swiper-slide img{
+    width: 127px;
+    height: 129px;
+}
+  .catalog_slide_body{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .catalog_slide_title{
+    font-size: 14px;
+    font-family: var(--fontMontserrat);
+    font-weight: 700;
+    line-height: 196.187%;
+    color: var(--mainFontColor);
+
+  }
+  .catalog-slide-author{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 196.187%;
+    color: var(--mainFontColor);
+  }
+  .catalog-readMoreBtn{
+    background-color: var(--mainOrange);
+    color: #fff ;
+    font-family: var(--fontMontserrat);
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 196.187%;
+    text-transform: uppercase;
+    padding: 10px 27px ;
+    border: none;
+    box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
+border-radius: 3px;
+  }
+
+  .swiper-button-next{
+    color: var(--mainRed);
+    margin-left: 30px;
+  }
+  .swiper-button-prev{
+    color: var(--mainRed);
+    margin-right: 30px;
+
+  }
