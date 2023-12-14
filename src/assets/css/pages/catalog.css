@@ -39,13 +39,14 @@ gap: 40px;
 
 .catalog_sliderSection{
   margin-bottom: 100px;
+  position: relative;
 }
 .swiper {
     padding-left: 80px; 
 display: flex;
-    margin-left:11.3% ;
+    margin-left:8.3% ;
     margin-right: 11.3%;
-    z-index: -1;
+   
   }
 
   .swiper-slide{
@@ -53,7 +54,7 @@ display: flex;
    
     padding-left: 40px;
     padding: 10px;
-   
+
   }
 
   .swiper-slide-container{
@@ -114,16 +115,11 @@ cursor: pointer;
 
   .swiper-button-next{
     color: var(--mainRed);
-    margin-left: 30px;
-    position: absolute;
-
- }
+margin-right: 5%;
+}
   .swiper-button-prev{
     color: var(--mainRed);
-    margin-right:30px;
-    position: absolute;
-
-
+margin-left: 5%;
   }
 
   .section_title{
@@ -136,4 +132,25 @@ cursor: pointer;
     align-items: center;
     justify-content: center;
     margin-bottom: 50px;
+  }
+  .book_isNew{
+   background-color:#EB5757;
+    position: fixed;
+    right: 10px;
+    top:10px;
+    width: 47px;
+    height: 13.5px;
+    font-size: 9px;
+    font-weight: 900;
+    font-family: var(--fontMontserrat);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    visibility: hidden;
+  }
+
+  .new_releases{
+    visibility: visible;
   }
