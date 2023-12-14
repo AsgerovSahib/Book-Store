@@ -1,11 +1,14 @@
 body{
     background-color: var(--mainColor);
 }
+
+
 .catalog_sectionHead{
     display: flex;
     justify-content: start;
     align-items: center;
     margin-top: 123px;
+    margin-bottom: 60px;
 
 }
 
@@ -30,20 +33,26 @@ gap: 40px;
 }
 
 
-/* swiper css */
+/* swiper css............................................................ */
 
+
+
+.catalog_sliderSection{
+  margin-bottom: 100px;
+}
 .swiper {
-    width: 600px;
-    height: 300px;
-    padding-left: 30px;
-    padding-right: 30px;
-    /* background-color: blueviolet; */
+    padding-left: 80px; 
+display: flex;
+    margin-left:11.3% ;
+    margin-right: 11.3%;
+    z-index: -1;
   }
 
   .swiper-slide{
     display: flex;
-    gap: 62px;
-    background-color: aqua;
+   
+    padding-left: 40px;
+    padding: 10px;
    
   }
 
@@ -52,16 +61,18 @@ gap: 40px;
     height: 332px;
     display: flex;
     background-color: #fff;
-    /* flex-direction: column;
+     flex-direction: column;
     align-items: center;
-    justify-content: center; 
-     */
-   
-
+    padding-top: 24px;
+    top: 40px;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
   }
+  
+
 .swiper-slide img{
     width: 127px;
-    height: 129px;
+    height: 179px;
+ margin-bottom: 10px;
 }
   .catalog_slide_body{
     display: flex;
@@ -92,18 +103,37 @@ gap: 40px;
     font-weight: 900;
     line-height: 196.187%;
     text-transform: uppercase;
-    padding: 10px 27px ;
+    padding-left: 27px;
+    padding-right: 27px;
+    height: 29px;
     border: none;
     box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
 border-radius: 3px;
+cursor: pointer;
   }
 
   .swiper-button-next{
     color: var(--mainRed);
     margin-left: 30px;
-  }
+    position: absolute;
+
+ }
   .swiper-button-prev{
     color: var(--mainRed);
-    margin-right: 30px;
+    margin-right:30px;
+    position: absolute;
 
+
+  }
+
+  .section_title{
+    font-family: var(--fontMontserrat);
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 196.187%;
+    display: flex;
+    color: var(--mainFontColor);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
   }
