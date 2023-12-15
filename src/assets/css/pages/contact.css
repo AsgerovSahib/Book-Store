@@ -87,7 +87,6 @@ body {
 }
 
 .btn_div {
-  display: flex;
   width: 100%;
   padding-left: 20%;
   padding-top: 45px;
@@ -114,4 +113,36 @@ body {
 .btn_send:hover{
     transform: scale(1.05);
      opacity: 0.8    
+}
+
+.success{
+  width: 89%;
+  height: 85px;
+  background-color: #d2f3e2e8;
+  margin-top: 20px;
+  border: none;
+  padding: 12px;
+  border-radius: 3px;
+  display: none;
+
+}
+
+
+.successfull{
+font-family: var(--fontMontserrat);
+color: #065633;
+font-size: 18px;
+font-weight: 800;
+padding: 5px;
+}
+
+
+.succes_info{
+
+font-family: var(--fontMontserrat);
+color: #065633;
+font-size: 18px;
+font-weight: 500;
+padding: 5px;
+
 }
