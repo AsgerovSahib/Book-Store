@@ -98,7 +98,7 @@ header{
 .form_inputs input{
    border: 1px solid #CECECE;
    background-color: #fff;
-   color: #ccc;
+   /* color: #ccc; */
    height: 76.04px;
    padding-left: 55px;
    font-size: 19px;
@@ -196,3 +196,14 @@ margin-bottom: 133px;
    gap: 54px;
    margin-top: 24px;
 }
+
+
+.message{
+   position: fixed;
+    margin-right: 40px;
+    margin-top: 50px;
+    border-radius: 10px;
+    opacity: 0.8;
+    padding: 20px;
+    font-size: 16px;
+  }
