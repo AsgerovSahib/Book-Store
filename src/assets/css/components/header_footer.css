@@ -34,7 +34,7 @@ header{
 
  }
 
- header ul li  :active{
+ header ul li  :active {
     color:var(--mainOrange);
     font-weight: 700;
     text-decoration: underline;
