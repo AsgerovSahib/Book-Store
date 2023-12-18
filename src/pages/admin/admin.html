@@ -228,7 +228,7 @@
           <div class="admin_search">
             <label class="admin_search_label" for=""> Search Book </label>
 
-            <form class="admin_search_form" action="">
+            <div class="admin_search_form">
               <input
                 id="admin_search_input"
                 class="admin_search_input"
@@ -238,7 +238,7 @@
               <button id="admin_search_button" class="admin_search_button">
                 <img src="../../assets/iconsFolder/adminSearch.svg" alt="" />
               </button>
-            </form>
+            </div>
             <div id="admin_result" class="admin_result">
               <div id="loading-spinner" class="loading-spinner"></div>
             </div>
@@ -434,7 +434,12 @@
       </div>
     </main>
 
+    <script type="module" src="../../assets/js/admin_firebase.js"></script>
+
     <script src="../../assets/js/search.js"></script>
-    <script src="../../assets/js/admin_firebase.js"></script>
+
+    <script src="../../assets/js/admin_about.js"></script>
+    <script src="../../assets/js/contact_admin.js"></script>
+
   </body>
 </html>

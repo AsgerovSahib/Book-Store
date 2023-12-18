@@ -42,7 +42,8 @@ let about_description_textarea = document.querySelector(
 
 //*  SEARCH JS
 
-admin_search_button.addEventListener("click", async function () {
+admin_search_button.addEventListener("click", async function (e) {
+  e.preventDefault();
   admin_result.innerHTML = "";
   let value = admin_search_input.value;
 
@@ -80,9 +81,6 @@ async function getData(id) {
     book_author_input.value = data.volumeInfo.authors[0];
     book_img_input.value = data.volumeInfo.imageLinks.thumbnail;
     book_description_textarea.value = data.volumeInfo.description;
-    about_title_input.value = data.volumeInfo.title;
-    about_image_url_input.value = data.volumeInfo.imageLinks.thumbnail;
-    about_description_textarea.value = data.volumeInfo.description;
   } catch (error) {
     console.log(error);
   }
