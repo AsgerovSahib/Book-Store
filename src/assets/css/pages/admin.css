@@ -131,6 +131,7 @@
   border-radius: 34px;
   background: #ff8b00;
   border: 0;
+  cursor: pointer;
 }
 
 .admin_result {
