@@ -27,7 +27,7 @@
     slidesPerView: 5,
     navigation: {
       nextEl: "#swiper1prev",
-      prevEl:"#swiper2next"
+      prevEl:"#swiper1next"
     },
   })
 
