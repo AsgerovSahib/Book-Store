@@ -21,6 +21,7 @@ const app = initializeApp(firebaseConfig);
 // Initialize Realtime Database and get a reference to the service
 const database = getDatabase(app);
 
+
 //^ Book add --------------------------
 
 add_book_btn.addEventListener("click", () => {
@@ -36,3 +37,4 @@ add_book_btn.addEventListener("click", () => {
   push(books, BookInfo);
   console.log("book obj", BookInfo);
 });
+

@@ -3,6 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getDatabase,set, ref,push,onValue} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyAPS3AigURroTi0Ukx6ajBNNLJdRBHsafc",
   authDomain: "library-cc233.firebaseapp.com",
@@ -41,6 +42,10 @@ const firebaseConfig = {
 });
 
 
+document.addEventListener("DOMContentLoaded", function() {
+
+
+
   joinUsBtn.addEventListener("click",function(e){
     e.preventDefault()
       const joinUs_fullName=document.querySelector("#joinUs_fullName").value.trim()
@@ -60,14 +65,24 @@ const firebaseConfig = {
     
         }
         push(joinUs,joinObj)
+
+      
+        
+
+
         document.querySelector("#joinUs_fullName").value = ""
     document.querySelector("#joinUs_email").value = ""
         showMessage("Successfull process",false)
         joinUsModalDiv.style.display = "none";
         console.log("join",joinObj);
       }
-    
-    })
+
+
+
+     
+
+
+    })})
 
    function setData(collection,data){
     const colRef=ref(db,collection)
