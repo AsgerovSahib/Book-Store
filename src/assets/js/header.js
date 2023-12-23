@@ -1,4 +1,5 @@
 
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getDatabase,set, ref,push,onValue} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
@@ -15,7 +16,7 @@ const firebaseConfig = {
 
  const app = initializeApp(firebaseConfig);
  const db = getDatabase(app);
-///////////////////////////////////////////////////////////////////////////////////////////
+
     var joinUsModalDiv = document.querySelector(".joinUs_modal_div");
     var joinUsButton = document.querySelector(".header_joinUs_Btn");
     const errorDiv = document.querySelector(".errorDiv");
@@ -63,6 +64,14 @@ document.addEventListener("DOMContentLoaded", function() {
          joinName:joinUs_fullName,
          joinEmail:joinUs_email
     
+
+    joinUsBtn.addEventListener("click", function () {
+      joinUsModalDiv.style.display = "none";
+    });
+
+
+
+
         }
         push(joinUs,joinObj)
 
@@ -126,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function() {
       messageDiv.remove();
     }, 3000);
   }
-// ////////////////////////////////////////
+
 
 let hamburgerBtn=document.querySelector(".hamburgerBtn")
 let sideMenu=document.querySelector(".side-menu")
@@ -139,3 +148,4 @@ closeBtn.addEventListener("click",function(){
   sideMenu.style.left = "-675px";
   
 })
+

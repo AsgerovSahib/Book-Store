@@ -59,7 +59,7 @@
                 <input
                   id="joinUs_fullName"
                   type="text"
-                  placeholder="Full name"
+                  placeholder="Fullname"
                 />
                 <input id="joinUs_email" type="email" placeholder="Email" />
               </div>
@@ -94,29 +94,48 @@
                 selecting the delivery city. More details
               </p>
 
+
+ 
+
+
+                
               <form class="comment_form">
                 <input
                   class="comment_input"
                   type="text"
                   placeholder="your anonim comment..."
+                  id="commentInput"
                 />
-                <button id="sendBtn" class="send_btn">
+                <button id="shareBtn" type="submit" class="send_btn">
                   <img src="../../assets/icons/images/send.svg" alt="sendImg" />
                 </button>
               </form>
 
-              <div id="commentMainId" class="book_comment">
-                <div class="comment_box">
-                  <div class="nameDate_info">
-                    <p class="user_name">anonim</p>
-                    <p class="date">18:32 today</p>
-                  </div>
+              <div id="commentMain" class="book_comment">  
+
+<!-- 
+                <div class="nameDate_info">
+
+                   <div class="info_user">
+                  <p class="user_name">anonim</p>
+                  <p class="date">18:32 today</p> 
+
+                </div> 
+
+
                   <div class="comment_title">
-                    <!-- Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into  -->
+
+                    <p>comment title Woah, your project looks awesome! </p>
                   </div>
-                </div>
+                 
+                </div> -->
+
+             
               </div>
             </div>
+
+
+            
             <div class="book_img">
               <img
                 class="book"
@@ -126,6 +145,8 @@
 
               <span class="new">new</span>
             </div>
+
+
           </div>
         </div>
       </div>
@@ -196,5 +217,6 @@
       </div>
     </footer>
     <script src="./src/assets/js/header.js"></script>
+
   </body>
 </html>

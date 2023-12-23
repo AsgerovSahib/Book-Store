@@ -69,8 +69,14 @@ body {
   gap: 6px;
 }
 
+.count_div{
+  width: 90%;
+
+}
+
 .count_word {
-  padding: 5px;
+  padding: 10px;
+text-align: right;
 }
 
 .note_btnDiv textarea {
@@ -107,6 +113,7 @@ body {
   color: #fff;
   opacity: 1;
   transition: all 0.3s ease;
+
 }
 
 
@@ -118,18 +125,18 @@ body {
 .success{
   width: 89%;
   height: 85px;
-  background-color: #d2f3e2e8;
+  background-color: #d2f3e280;
   margin-top: 20px;
   border: none;
   padding: 12px;
-  border-radius: 3px;
+  border-radius: 4px;
   display: none;
 
 }
 
 
 .successfull{
-font-family: var(--fontMontserrat);
+font-family: var( --fontRoboto);
 color: #065633;
 font-size: 18px;
 font-weight: 800;
@@ -139,10 +146,53 @@ padding: 5px;
 
 .succes_info{
 
-font-family: var(--fontMontserrat);
+font-family: var( --fontRoboto);
 color: #065633;
 font-size: 18px;
 font-weight: 500;
 padding: 5px;
 
 }
+
+
+
+.danger{
+  width: 89%;
+  height: 85px;
+  background-color: #fadddff3;
+  margin-top: 20px;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  display: none;
+
+}
+
+
+
+.error{
+  font-family: var( --fontRoboto);
+  color: rgb(195, 41, 59) ;
+  font-size: 18px;
+  font-weight: 800;
+  padding: 5px;
+
+  }
+  
+  .error_info{
+    font-family: var( --fontRoboto);
+    color: rgb(195, 41, 59) ;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px;
+  
+    }
+    
+
+
+
+
+
+
+
+ 
