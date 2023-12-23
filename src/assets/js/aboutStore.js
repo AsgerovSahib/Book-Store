@@ -23,44 +23,31 @@ const db = getDatabase(app);
 
 
 document.addEventListener("DOMContentLoaded", function () {
-
   const store_title = document.querySelector(".store_title");
     
   const text = document.querySelector(".text");
     const books = document.querySelector(".books");
 
     const booksImage = books.querySelector("img");
-    // const newStoretitle = localStorage.getItem("aboutTitle") || store_title.textContent
-    // const newText = localStorage.getItem("aboutDesc") || text.textContent
+   
+      function readData(collection) {
+        const readRef = ref(db, collection);
+        onValue(readRef, (snapshot) => {
+          const data = snapshot.val();
+          console.log("dd",data);
+store_title.innerHTML=data.about_title_input ||store_title.textContent
 
-  // const newImage = localStorage.getItem("aboutImg") || books.image.textContent;
-  
-    store_title.innerHTML = newStoretitle;
-    text.innerHTML = newText;
+    text.innerHTML=data.about_description_textarea || text.textContent
+    booksImage.src=data.about_image_url_input || books.image.textContent
+          console.log("sssss",aboutData);
+
+        });
     
-    if (booksImage) {
-        booksImage.src = newImage;
       }
+      readData("aboutUs");
+      
+
+
   });
 
-  function readData(collection) {
-    const readRef = ref(database, collection);
-    onValue(readRef, (snapshot) => {
-      const data = snapshot.val();
-      const userArr = Object.entries(data);
-const newStoretitle=user[1]
-
-
-      // let result = userArr.map(
-      //   (user, index) =>
-      //     `<tr  id="${user[1].id}}">
-      //       <th class="mobil-id">${index + 1}</th>
-      //       <th>${user[1].joinName}</th>
-      //       <th>${user[1].joinEmail}</th>
-      //     </tr>`
-      // );
-      // join_tbody.innerHTML = result.join("");
-    });
-  }
-  readData("aboutUs");
-  
+ 

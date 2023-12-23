@@ -36,9 +36,6 @@ add_info.addEventListener("click",function(){
    let about_description_textarea=document.querySelector("#about_description_textarea").value.trim()
    const aboutUs=ref(db,"aboutUs")
 
-// localStorage.setItem("aboutTitle",about_title_input)
-// localStorage.setItem("aboutDesc",about_description_textarea)
-// localStorage.setItem("aboutImg",about_image_url_input)
 
 const AboutObj={
     about_title_input,

@@ -62,32 +62,39 @@ function readData(collection) {
 }
 readData("joinUs");
 
-// contact//
 
-const contact_tbody = document.querySelector("#contact_tbody");
+
+// for CONTACT
+
+const contactBody = document.querySelector("#contactBody");
+
 function readContact(collection) {
   const readRef = ref(database, collection);
+
   onValue(readRef, (snapshot) => {
     const data = snapshot.val();
     console.log("data", data);
-    
-      const userArr = Object.entries(data)
-      console.log("userArr", userArr);
 
-      const result = userArr.map((user,index) => 
-   
-      `<tr id=${user[1].id}  >
-      <th class="mobil-id" >${index+1}</th>
-      <th>${user[1].fullname}</th>
-      <th>${user[1].email}</th>
-      <th>${user[1].address}</th>
-      <th>${user[1].phone}</th>
+    const userArr = Object.entries(data);
+    console.log("userArr", userArr);
 
-    </tr>`)
-        
-          contact_tbody.innerHTML =result.join("").
-      console.log("userData", userData);
+    const result = userArr.map((user, index) => {
+      const userId = user[0]; 
+      const userData = user[1]; 
     
+      return `
+        <tr id=${userId}>
+          <th class="mobil-id">${index + 1}</th>
+          <th>${userData.fullname}</th>
+          <th>${userData.email}</th>
+          <th>${userData.address}</th>
+          <th>${userData.phone}</th>
+        </tr>`;
+    });
+console.log("result",result);
+contactBody.innerHTML = result.join("")
+    console.log("data", data);
   });
 }
-readContact("contactUs");
+
+readContact("contactUs")
