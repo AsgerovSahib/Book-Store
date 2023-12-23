@@ -78,7 +78,7 @@
 
     <!-- CONTACT US SECTION -->
 
-    <main>
+    <main class="main">
       <div class="contactUs_title">
         <h1 class="contact_us">Contact Us</h1>
       </div>
@@ -86,32 +86,44 @@
       <form>
         <div class="form_div">
           <div class="input_box1">
-            <input type="text" placeholder="Fullname" />
-            <input type="text" placeholder="Address" />
+            <input class="name_input" id="nameInput" type="text" placeholder="Fullname" />
+            <input class="address_input" id="addressInput" type="text" placeholder="Address" />
           </div>
 
           <div class="input_box2">
-            <input type="text" placeholder="Email" />
-            <input class="phone_input" type="number" placeholder="Phone" />
+            <input id="emailInput" type="text" placeholder="Email" />
+
+  
+            <input id="phoneInput" class="phone_input" type="number" placeholder="Phone" />
           </div>
         </div>
       </form>
 
       <div class="note_btnDiv">
-        <div>
-          <textarea id="noteArea" class="note_title" placeholder="Note"></textarea>
+        <div class="text">
+          <textarea id="noteArea" class="note_title" placeholder="Note" ></textarea>
         </div>
 
-        <div>
-          <span id="countWord" class="count_word"> 0/100 </span>
+        <div class="count_div">
+          <p id="countWord" class="count_word"> 0/100 </p>
         </div>
-<div id="successfull" class="success">
-  <p  class="successfull">Successfull</p>
-  <p class="succes_info">Sended your information!</p>
+<div id="success" class="success">
+  <p id="successfull"  class="successfull">Successfull</p>
+  <p id="succes_info" class="succes_info">Sended your information !</p>
 </div>
+
+
+<div id="danger" class="danger">
+  <p  class="error">
+    Error !</p>
+    <p class="error_info" >Please fill in  all the informations</p>
+</div>
+<form onsubmit="formSubmit(event)">
         <div class="btn_div">
-          <button class="btn_send" type="submit">Send</button>
+          <button id="sendBtn"  class="btn_send" type="submit">Send</button>
         </div>
+
+      </form>
       </div>
     </main>
 
@@ -182,7 +194,37 @@
         </p>
       </div>
     </footer>
-    <script src="./src/assets/js/header.js"></script>
-    <script src="../../assets/js/contact.js"></script>
+
+
+
+
+
+
+
+   
+    <script>
+
+      function formSubmit(event){
+      
+      event.preventDefault()
+      console.log("submit");
+      
+      }
+      
+      </script>
+      
+        <script src="../../assets/js/header.js" ></script>
+      
+      <script type="module" src="../../assets/js/contact.js" ></script>
+      
+      
+    
   </body>
+
+
+
+
+
+
+      
 </html>

@@ -110,7 +110,7 @@ body{
   margin-top: 122px;
   width: 100%;
   display: flex;
-
+flex-direction: row;
   max-height: 60px;
 }
 
@@ -147,19 +147,12 @@ body{
   gap: 44px;
 }
 
-.comment_box{
-  padding: 28px 17.5px 29px 18px;
-  border-radius: 5px;
-  background: #fff;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
 
-}
 
-.comment_head {
+/* .comment_head {
   display: flex;
   align-items: center;
-}
+} */
 
 
 .user_name {
@@ -180,7 +173,7 @@ body{
     line-height: 24px;
   }
 
-  .comment_title{
+  .comment_title p{
 
     color: var(--mainFontColor);
     font-size: 16px;
@@ -195,11 +188,21 @@ padding-top: 18px;
   
   
   .nameDate_info {
-
-    display: flex;
-    gap: 46px;
+    padding: 28px 17.5px 29px 18px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+display: flex;
+flex-direction: column;
+    gap: 20px;
   }
-  
+
+  .info_user{
+    display: flex;
+    gap: 45px;
+    padding: 5px;
+  }  
   /* COMMENT SECTION FINSIH */
 
 
