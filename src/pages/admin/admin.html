@@ -228,7 +228,7 @@
           <div class="admin_search">
             <label class="admin_search_label" for=""> Search Book </label>
 
-            <form class="admin_search_form" action="">
+            <div class="admin_search_form">
               <input
                 id="admin_search_input"
                 class="admin_search_input"
@@ -238,7 +238,7 @@
               <button id="admin_search_button" class="admin_search_button">
                 <img src="../../assets/iconsFolder/adminSearch.svg" alt="" />
               </button>
-            </form>
+            </div>
             <div id="admin_result" class="admin_result">
               <div id="loading-spinner" class="loading-spinner"></div>
             </div>
@@ -246,7 +246,7 @@
 
           <div class="admin_add_book">
             <p class="admin_form_head_title">Book form</p>
-            <form class="admin_add_form" action="">
+            <div class="admin_add_form">
               <div class="admin_form_item">
                 <label class="admin_form_label" for=""> Book Name </label>
                 <input
@@ -294,7 +294,7 @@
                 />
                 <label for="check_input">New</label>
               </div>
-              <div class="admin_form_item">
+              <!-- <div class="admin_form_item">
                 <label class="admin_form_label" for="">
                   Book Type
 
@@ -331,9 +331,19 @@
                     class="admin_dropdown_item_main"
                   ></div>
                 </div>
+              </div> -->
+              <div class="admin_form_item">
+                <label class="admin_form_label" for=""> Book Type</label>
+                <input
+                  id="type_input"
+                  class="admin_form_input"
+                  placeholder="Dedektiv"
+                  type="text"
+                />
               </div>
+
               <button id="add_book_btn" class="admin_add_button">Add</button>
-            </form>
+            </div>
           </div>
 
           <div class="admin_add_information">
@@ -388,7 +398,9 @@
                     <th>Email Address</th>
                   </tr>
                 </thead>
-                <tbody id="join_tbody"></tbody>
+                <tbody id="join_tbody">
+                  
+                </tbody>
               </table>
             </div>
           </div>
@@ -445,16 +457,12 @@
       </div>
     </main>
 
-    <script src="../assest/js/dom/selector.js"></script>
-    <script src="../assest/js/dom/event.js"></script>
-    <script src="../assest/js/dom/admin-menu.js"></script>
-    <script src="../assest/js/custom_functions/function.js"></script>
-    <script type="module" src="../../assets/js/contact.js"></script>
-    <script type="module" src="../assest/js/admin/login.js"></script>
-    <script src="../assest/js/admin/admin.js"></script>
 
-    <script src="../assest/js/dropdown/dropdown.js"></script>
-    <script type="module" src="../assest/js/admin/admin_firebase.js"></script>
-    <script type="module" src="../assest/js/helper/firebase-helper.js"></script>
+    <script src="../../assets/js/search.js"></script>
+
+    <script type="module" src="../../assets/js/admin_firebase.js"></script>
+
+    <script src="../../assets/js/admin_about.js"></script>
+    <script src="../../assets/js/contact_admin.js"></script>
   </body>
 </html>

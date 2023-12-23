@@ -19,7 +19,7 @@
           <img src="./src/assets/icons/icono.svg" alt="" />
         </a>
       </div>
-      <div class="header_navbar_div">
+      <div id="header_navbar_div" class="header_navbar_div">
         <ul>
           <li>
             <a href="./index.html">Home</a>
@@ -43,7 +43,33 @@
         <button class="header_joinUs_Btn">
           <img src="./src/assets/iconsFolder/joinUs.svg" alt="" />Join us
         </button>
+       
       </div>
+      <div class="hamburger_div">
+        <button class="mobileJoin">
+        <img src="./src/assets/iconsFolder/joinUs.svg" alt="" />
+      </button>
+        <button class="hamburgerBtn">
+          <img src="/src/assets/iconsFolder/hamburger.svg" alt="">
+        </button>
+       </div>
+<div class="side-menu">
+  <div class="closeBtn">
+    <img src="/src/assets/iconsFolder/close.svg" alt="close">
+  </div >
+  <div class="side-nav">
+  <nav>
+    <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="#">Catalog</a></li>
+
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+</div>
+</div>
+
       <div class="joinUs_modal_div">
         <div class="joinUs_modal_item">
           <div class="joinUs_title">
@@ -64,14 +90,20 @@
           </div>
         </div>
       </div>
+
+      <!-- <div class="errorDiv">
+        <p class="errorMessage">error message</p> -->
+    </div>
     </header>
     <main>
 <section class="home_bookSection">
   <div class="home_bookSection_left">
 <p class="home_bookSection_title">Books from A to Z</p>
-<p class="home_bookSection_description">In our store you can find a book for every taste. A large assortment. 
+<div class="home_bookSection_description">
+<p >In our store you can find a book for every taste. A large assortment. 
   Nice prices. Interesting stories.</p>
-<button class="home_bookSection_button">Go to catalog</button>
+</div>
+<button class="home_bookSection_button"><a href="./src/pages/catalog/catalog.html">Go to catalog</a></button>
   </div>
 <div class="home_bookSection_right">
   <img src="./src/assets/iconsFolder/home_book.svg" alt="book">
@@ -187,12 +219,17 @@
           </ul>
         </div>
       </div>
+     
       <div class="footer_bottom">
-        <p>
+        <p class="p1">
           All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy
+        </p>
+        <p class="p2">
+          Library BookStore EACamp <br> <br>
+© 2003-2021 
         </p>
       </div>
     </footer>
-    <script src="./src/assets/js/header.js"></script>
+    <script type="module" src="./src/assets/js/header.js"></script>
   </body>
 </html>

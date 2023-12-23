@@ -31,6 +31,7 @@
     color: var(--mainFontColor);
     font-family:  var(--fontMontserrat);
     margin-bottom: 50px;
+    
 }
 #login_form{
     display: flex;
@@ -45,7 +46,6 @@
     padding-left: 51.64px; 
     font-size: 19px; 
     font-family: var(--fontCrimson);
-
 
 }
 #login_form button{
@@ -74,4 +74,51 @@ border-radius: 5px;
     display: none;
     color: #fff;
     font-family: var(--fontMontserrat);
+}
+
+
+@media screen and (max-width: 675px){
+.login_body{
+    display: flex;
+}
+    .login_formDiv p{
+        font-size: 20px;
+
+    }
+
+    #login_formDiv{
+        width: 229px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 21px;
+        align-items: center;
+    
+        /* background-color: azure; */
+    }
+    #login_form{
+        display: flex;
+        flex-direction: column;
+        gap: 21px;
+        margin-left: 2px;
+        margin-right: 1px;
+    }
+
+    #login_form input{
+        height: 40px;
+        padding-left: 11px; 
+        font-size: 16px; 
+    }
+
+    #login_form button{
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    height: 37px;
+    /* margin-bottom: 34px; */
+    border-radius: 5px;
+    margin-top: 0px;
+    }
+
 }

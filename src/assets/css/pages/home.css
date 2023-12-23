@@ -7,7 +7,8 @@ body{
     display: flex;
     justify-content:center;
     margin-top: 120px;
-    gap:10.5%;
+    gap:2.5%;
+    gap: 40px;
 
 }
 .home_bookSection_left{
@@ -28,7 +29,12 @@ body{
     font-size: 13px;
     font-weight: 400;
     line-height: 196.187%;
+    flex-wrap: wrap;
+    padding-right: 6%;
     color: var(--mainFontColor);
+    width: 290px;
+    max-width: 290px;
+    min-width: 280px;
 }
 .home_bookSection_button{
     width: 212px;
@@ -41,6 +47,12 @@ body{
     line-height: 196.187%;
     cursor: pointer;
 }
+.home_bookSection_button a{text-decoration: none;
+    color: #fff;
+
+}
+
+
 .home_bookSection_right{
     margin-right:6.1% ;
 }
@@ -85,14 +97,18 @@ body{
     font-size: 25px;
     font-weight: 900;
     line-height: 196.187%;
-    margin-bottom: 47px;
+    margin-bottom: 30px;
 }
 
 
-.home_aboutSection_div, 
+.home_aboutSection_div{text-align: center;
+
+}
 .home_deliverySection_div{
     text-align: center;
-    width: 70%;
+    width: 290px;
+    max-width: 290px;
+    min-width: 290px;
 }
 
 
@@ -124,3 +140,99 @@ body{
 line-height:196.187%; 
 margin-bottom: 134px;}
     
+/* RESPONSIVE DESIGNE HOME PAGE */
+
+
+
+@media screen and (max-width: 675px) {
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-left: 15px; 
+ margin-right: 15px;  */
+}
+
+    .home_bookSection{
+        display: flex;
+        flex-direction:column;
+        /* padding-left: 15px;
+        padding-right: 15px; */
+    }
+    .home_bookSection_button{
+    width: 100%;}
+
+    
+   
+    .home_bookSection_right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+
+    .home_bookSection_right img{
+        width:275px;
+    }
+    .home_bookSection_left{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+    .home_bookSection_button{
+        width: 290px;
+    }
+    .home_bookSection_title{
+        font-size: 28px;
+    }
+    .home_bookSection_description{
+        font-size: 13px;
+      
+    }
+
+
+    .home_catalogSection_div{
+display: flex;
+flex-direction: column;
+
+    }
+
+
+    .home_catalogSection_body{
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home_aboutSection_body{
+        display: flex;
+        flex-direction: column;
+    }
+    .home_aboutSection_item{
+        display: flex;
+        justify-content: start;
+        /* align-items: center; */
+        gap: 18px;
+        
+    }
+
+    .home_aboutSection_item h3{
+        font-size: 50px;
+    } 
+    .home_aboutSection_item p{
+        font-size: 13px;
+    }
+    .home_catalogSection, .home_aboutSection, .home_deliverySection{
+        display: flex;
+       align-items: center;
+
+    }
+
+
+
+}
+
+
