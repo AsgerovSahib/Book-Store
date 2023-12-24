@@ -21,7 +21,6 @@ const app = initializeApp(firebaseConfig);
 // Initialize Realtime Database and get a reference to the service
 const database = getDatabase(app);
 
-
 //^ Book add --------------------------
 
 add_book_btn.addEventListener("click", () => {
@@ -38,3 +37,57 @@ add_book_btn.addEventListener("click", () => {
   console.log("book obj", BookInfo);
 });
 
+// for join Us///
+
+
+
+const join_tbody = document.querySelector("#join_tbody");
+console.log("body", join_tbody);
+
+function readData(collection) {
+  const readRef = ref(database, collection);
+  onValue(readRef, (snapshot) => {
+    const data = snapshot.val();
+    const userArr = Object.entries(data);
+    let result = userArr.map(
+      (user, index) =>
+        `<tr  id="${user[1].id}}">
+          <th class="mobil-id">${index + 1}</th>
+          <th>${user[1].joinName}</th>
+          <th>${user[1].joinEmail}</th>
+        </tr>`
+    );
+    join_tbody.innerHTML = result.join("");
+  });
+}
+readData("joinUs");
+
+// contact//
+
+const contact_tbody = document.querySelector("#contact_tbody");
+function readContact(collection) {
+  const readRef = ref(database, collection);
+  onValue(readRef, (snapshot) => {
+    const data = snapshot.val();
+    console.log("data", data);
+    
+      const userArr = Object.entries(data)
+      console.log("userArr", userArr);
+
+      const result = userArr.map((user,index) => 
+   
+      `<tr id=${user[1].id}  >
+      <th class="mobil-id" >${index+1}</th>
+      <th>${user[1].fullname}</th>
+      <th>${user[1].email}</th>
+      <th>${user[1].address}</th>
+      <th>${user[1].phone}</th>
+
+    </tr>`)
+        
+          contact_tbody.innerHTML =result.join("").
+      console.log("userData", userData);
+    
+  });
+}
+readContact("contactUs");
