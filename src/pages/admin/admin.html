@@ -381,7 +381,7 @@
                   rows="10"
                 ></textarea>
               </div>
-              <button id="add_info" class="admin_add_button">
+              <button type="submit" id="add_info" class="admin_add_button">
                 About info add
               </button>
             </form>
@@ -428,7 +428,7 @@
           <div id="ABC" class="admin_add_information">
             <p class="admin_form_bold_title">Contact Us</p>
             <div class="table_scroll">
-              <table class="contact_table">
+              <table id="contactTable" class="contact_table">
                 <thead>
                   <tr>
                     <th class="mobil-id">#</th>
@@ -438,13 +438,26 @@
                     <th>Phone Number</th>
                   </tr>
                 </thead>
-                <tbody id="contact_tbody"></tbody>
+                <tbody id="contactBody">
+
+                  <!-- <tr>
+                    <th class="mobil-id">1</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr> -->
+
+
+                </tbody>
               </table>
             </div>
           </div>
         </div>
       </div>
     </main>
+
+<script src="/src/assets/js/admin_about.js"></script>
 
     <script src="../../assets/js/search.js"></script>
 
