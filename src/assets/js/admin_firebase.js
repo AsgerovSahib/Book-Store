@@ -22,6 +22,7 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
 //^ Book add --------------------------
+const books = ref(database, "books");
 
 add_book_btn.addEventListener("click", () => {
   let BookInfo = {
@@ -32,9 +33,53 @@ add_book_btn.addEventListener("click", () => {
     bookType: type_input.value,
     isNew: is_new.checked,
   };
-  const books = ref(database, "books");
   push(books, BookInfo);
   console.log("book obj", BookInfo);
+});
+
+onValue(books, (item) => {
+  const bookData = item.val();
+  let bookDataToArr = Object.entries(bookData);
+  console.log("bookDataToArr", bookDataToArr);
+  let bookItem = bookDataToArr
+    .map(
+      (item, index) =>
+        `
+          <tr class="a">
+              <td class="mobil-id">${index}</td>
+              <td class="custom_td">
+                  <img class="admin_book_img" src="${item[1].bookImg}" alt="">
+                  ${item[1].bookName}
+              </td>
+              <td class="admin_book_description">
+                  <div class="description_body">
+                      <p class="description_item">
+                          ${item[1].bookDescription}
+                      </p>
+                  </div>
+              </td>
+              <td>${item[1].bookType}</td>
+              <td>${item[1].bookAuthor}</td>
+              <td>
+                  <button class="delete_item" data-id="${item[0]}">
+                      <i class="material-icons">&#xe872;</i>
+                  </button>
+              </td>
+          </tr>
+      `
+    )
+    .join("");
+
+  books_tbody.innerHTML = bookItem;
+
+  let delete_item = document.querySelectorAll(".delete_item");
+
+  delete_item.forEach((el) =>
+    el.addEventListener("click", function () {
+      let id = el.dataset.id;
+      deleteBookDetail(id);
+    })
+  );
 });
 
 // for join Us///
@@ -64,7 +109,7 @@ readData("joinUs");
 
 // contact//
 
-const contact_tbody = document.querySelector("#contact_tbody");
+const contactBody = document.querySelector("#contactBody");
 function readContact(collection) {
   const readRef = ref(database, collection);
   onValue(readRef, (snapshot) => {
@@ -85,8 +130,7 @@ function readContact(collection) {
 
     </tr>`)
         
-          contact_tbody.innerHTML =result.join("").
-      console.log("userData", userData);
+          contactBody.innerHTML =result.join("")
     
   });
 }

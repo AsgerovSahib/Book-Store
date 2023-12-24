@@ -10,9 +10,66 @@
 
     <link rel="stylesheet" href="../../assets/css/pages/aboutStore.css" />
 
+    <link
+      rel="stylesheet"
+      href="../../assets/css/components/header_footer.css"
+    />
     <title>About Store</title>
   </head>
   <body>
+    <header>
+      <div class="header_logo_div">
+        <a href="./index.html">
+          <!-- <img src="./src/assets/icons/icono.svg" alt="" /> -->
+          <img src="../../assets/icons/icono.svg" alt="" />
+        </a>
+      </div>
+      <div class="header_navbar_div">
+        <ul>
+          <li>
+            <a href="../../../index.html">Home</a>
+          </li>
+          <li>
+            <a href="../catalog/catalog.html">Catalog</a>
+          </li>
+          <li>
+            <a href="../about/about.html">About Store</a>
+          </li>
+          <li>
+            <a href="../contact/contact.html">Contact us</a>
+          </li>
+          <li>
+            <a href="../search/search.html">Search</a>
+          </li>
+        </ul>
+      </div>
+      <div class="header_joinUs_div">
+        <button class="header_joinUs_Btn">
+          <img src="../../assets/iconsFolder/joinUs.svg" alt="" />Join us
+        </button>
+      </div>
+      <div class="joinUs_modal_div">
+        <div class="joinUs_modal_item">
+          <div class="joinUs_title">
+            <p>Join Us</p>
+          </div>
+          <div class="joinUs_form_div">
+            <form id="joinUs_form" action="">
+              <div class="form_inputs">
+                <input
+                  id="joinUs_fullName"
+                  type="text"
+                  placeholder="Fullname"
+                />
+                <input id="joinUs_email" type="email" placeholder="Email" />
+              </div>
+              <button class="joinUsBtn" type="submit">Join</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+
     <main>
       <section class="aboutStore_container">
         <h1 class="store_title">About Store</h1>
@@ -37,8 +94,44 @@
         </div>
       </section>
     </main>
+    <footer>
+      <div class="footer_top">
+        <div class="footer_logo_div">
+          <img src="../../assets/iconsFolder/whiteLogo.svg" alt="" />
+        </div>
+        <div class="footer_list_div">
+          <ul class="footer_lis_title">
+            Popular
+            <li>Programming</li>
+            <li>Books for children</li>
+            <li>Psychology</li>
+            <li>Business</li>
+          </ul>
+
+          <ul class="footer_lis_title">
+            Cash
+            <li>Delivery</li>
+            <li>Payment</li>
+            <li>About the store</li>
+          </ul>
+          <ul class="footer_lis_title">
+            Help
+            <li>Contacts</li>
+            <li>Purchase return</li>
+            <li>Buyer help</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <p>
+          All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy
+        </p>
+      </div>
+    </footer>
+    <script src="./src/assets/js/header.js"></script>
+
     <script src="/src/assets/js/admin_about.js"></script>
-<script src="/src/assets/js/aboutStore.js"></script>
+    <script src="/src/assets/js/aboutStore.js"></script>
     <!-- <script src="/src/assets/js/admin_about.js"></script> -->
   </body>
 </html>

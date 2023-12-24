@@ -510,6 +510,24 @@ tr:nth-child(even) {
   left: 35%;
   transform: translate(-50%, -50%);
 }
+.description_item {
+  white-space: nowrap;
+  width: 100px;
+  overflow-x: scroll;
+  text-align: left;
+  &&::-webkit-scrollbar {
+    display: none;
+  }
+}
+.custom_td {
+  white-space: nowrap;
+  width: 200px;
+  overflow-x: scroll;
+  text-align: left;
+  &&::-webkit-scrollbar {
+    display: none;
+  }
+}
 
 @keyframes spin {
   0% {
