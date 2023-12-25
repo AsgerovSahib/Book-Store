@@ -1,4 +1,3 @@
-// //* for Rufet
 
 
 const add_info=document.querySelector("#add_info")
