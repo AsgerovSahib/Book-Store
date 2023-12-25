@@ -71,7 +71,7 @@
     </header>
 
     <main>
-      <div class="book_aboutPage">
+      <div id="bookAbout" class="book_aboutPage">
         <div id="book_page">
           <div class="book_header">
             <div class="book_text">
@@ -106,7 +106,7 @@
                   placeholder="your anonim comment..."
                   id="commentInput"
                 />
-                <button id="shareBtn" type="submit" class="send_btn">
+                <button id="shareBtn" type="submit" onsubmit="formOnSubmit(event)" class="send_btn">
                   <img src="../../assets/icons/images/send.svg" alt="sendImg" />
                 </button>
               </form>
@@ -217,6 +217,6 @@
       </div>
     </footer>
     <script src="./src/assets/js/header.js"></script>
-
+    <script src="../../assets/js/commentBook.js" ></script>
   </body>
 </html>
