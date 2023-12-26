@@ -5,6 +5,7 @@ import {
   ref,
   push,
   onValue,
+  remove,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
 const firebaseConfig = {
@@ -95,6 +96,7 @@ onValue(books, (item) => {
   delete_item.forEach((el) =>
     el.addEventListener("click", function () {
       let id = el.dataset.id;
+      console.log(id);
       deleteBookDetail(id);
     })
   );
@@ -154,7 +156,7 @@ readContact("contactUs");
 
 let BookTypeId = document.querySelector("#BookTypeId");
 
-console.log(BookTypeId);
+// console.log(BookTypeId);
 
 onValue(catalog, (item) => {
   const data = item.val();
@@ -169,9 +171,14 @@ onValue(catalog, (item) => {
 });
 
 let bookTypeOption = document.querySelectorAll("#bookTypeOption");
-console.log(bookTypeOption);
+// console.log(bookTypeOption);
 
 BookTypeId.addEventListener("change", () => {
-  console.log(BookTypeId.value);
+  // console.log(BookTypeId.value);
   type_input.value = BookTypeId.value;
 });
+
+function deleteBookDetail(id) {
+  let rmv = ref(database, "books/" + id);
+  remove(rmv);
+}
