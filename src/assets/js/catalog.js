@@ -60,7 +60,7 @@ swiper2=new Swiper("#swiper2",{
 swiper3=new Swiper("#swiper3",{
 
     loop: true,
-   slidesPerView: 3,
+   slidesPerView: 5,
    slidesPerGroup: 1,
 
    navigation: {
@@ -85,6 +85,8 @@ swiper3=new Swiper("#swiper3",{
           let result = sliderArr.map((item) => {
             const bookName = item[1]?.bookName || "Undefined Book";
             const bookAuthor=item[1]?.bookAuthor ||"undefined Author"
+            const bookID=item[0]
+            console.log("ID",bookID);
             return `
             <div class="swiper-slide"   >
             <div class="swiper-slide-container">
@@ -103,7 +105,7 @@ swiper3=new Swiper("#swiper3",{
                 <div class="titleDiv">
                 <p class="catalog-slide-author">${bookAuthor}</p> 
                 </div>
-                <button class="catalog-readMoreBtn" type="button">Read More</button>
+                <button id="${bookID}" class="catalog-readMoreBtn" type="button">Read More</button>
               </div>
             </div>
                </div>

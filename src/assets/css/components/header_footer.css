@@ -124,6 +124,7 @@ header{
    font-family: var(--fontCrimson);
    margin-top: 86.2px;
    margin-bottom: 35px;
+   cursor: pointer;
 }
 
 .joinUs_title{
