@@ -143,7 +143,8 @@ const filterData=Object.entries(filterObj)
       let result =filterData.map((item) => {
         const bookname = item[1]?.bookName || "Undefined Book";
         const bookauthor=item[1]?.bookAuthor ||"undefined Author"
-        
+        const bookID=item[0]
+        console.log("id",bookID);
         return `
         <div class="swiper-slide"   >
         <div class="swiper-slide-container">
@@ -162,7 +163,7 @@ const filterData=Object.entries(filterObj)
             <div class="titleDiv">
             <p class="catalog-slide-author">${bookauthor}</p> 
             </div>
-            <button class="catalog-readMoreBtn" type="button">Read More</button>
+            <button id="${bookID}" class="catalog-readMoreBtn" type="button">Read More</button>
           </div>
         </div>
            </div>
