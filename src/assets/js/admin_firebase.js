@@ -23,8 +23,25 @@ const database = getDatabase(app);
 
 //^ Book add --------------------------
 const books = ref(database, "books");
+const catalog = ref(database, "catalog");
 
 add_book_btn.addEventListener("click", () => {
+  //*book type catch
+
+  let arr = [];
+  onValue(catalog, (item) => {
+    const data = item.val();
+    let catagorieArr = Object.entries(data);
+    catagorieArr.forEach((item) => {
+      arr.push(item[1].bookType);
+    });
+    if (!arr.includes(type_input.value)) {
+      push(catalog, {
+        bookType: type_input.value,
+      });
+    }
+  });
+
   let BookInfo = {
     bookName: book_name_input.value,
     bookAuthor: book_author_input.value,
@@ -34,13 +51,14 @@ add_book_btn.addEventListener("click", () => {
     isNew: is_new.checked,
   };
   push(books, BookInfo);
-  console.log("book obj", BookInfo);
+  // push(catalog, { bookType: type_input.value });
+  // console.log("book obj", BookInfo);
 });
 
 onValue(books, (item) => {
   const bookData = item.val();
   let bookDataToArr = Object.entries(bookData);
-  console.log("bookDataToArr", bookDataToArr);
+  // console.log("bookDataToArr", bookDataToArr);
   let bookItem = bookDataToArr
     .map(
       (item, index) =>
@@ -84,10 +102,8 @@ onValue(books, (item) => {
 
 // for join Us///
 
-
-
 const join_tbody = document.querySelector("#join_tbody");
-console.log("body", join_tbody);
+// console.log("body", join_tbody);
 
 function readData(collection) {
   const readRef = ref(database, collection);
@@ -114,24 +130,48 @@ function readContact(collection) {
   const readRef = ref(database, collection);
   onValue(readRef, (snapshot) => {
     const data = snapshot.val();
-    console.log("data", data);
-    
-      const userArr = Object.entries(data)
-      console.log("userArr", userArr);
+    // console.log("data", data);
 
-      const result = userArr.map((user,index) => 
-   
-      `<tr id=${user[1].id}  >
-      <th class="mobil-id" >${index+1}</th>
+    const userArr = Object.entries(data);
+    // console.log("userArr", userArr);
+
+    const result = userArr.map(
+      (user, index) =>
+        `<tr id=${user[1].id}  >
+      <th class="mobil-id" >${index + 1}</th>
       <th>${user[1].fullname}</th>
       <th>${user[1].email}</th>
       <th>${user[1].address}</th>
       <th>${user[1].phone}</th>
 
-    </tr>`)
-        
-          contactBody.innerHTML =result.join("")
-    
+    </tr>`
+    );
+
+    contactBody.innerHTML = result.join("");
   });
 }
 readContact("contactUs");
+
+let BookTypeId = document.querySelector("#BookTypeId");
+
+console.log(BookTypeId);
+
+onValue(catalog, (item) => {
+  const data = item.val();
+  let arr = Object.entries(data);
+  // console.log(arr);
+  let result = arr.map(
+    (item) =>
+      `   <option id="bookTypeOption" value="${item[1].bookType}">${item[1].bookType}</option>
+    `
+  );
+  BookTypeId.innerHTML = result;
+});
+
+let bookTypeOption = document.querySelectorAll("#bookTypeOption");
+console.log(bookTypeOption);
+
+BookTypeId.addEventListener("change", () => {
+  console.log(BookTypeId.value);
+  type_input.value = BookTypeId.value;
+});
