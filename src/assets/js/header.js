@@ -36,43 +36,43 @@ joinUsButton.addEventListener("click", function () {
     joinUsModalDiv.style.display = "flex";
   }
 });
-mobileJoin.addEventListener("click", function () {
+if(mobileJoin){mobileJoin.addEventListener("click", function () {
   if (joinUsModalDiv.style.display === "flex") {
     joinUsModalDiv.style.display = "none";
   } else {
     joinUsModalDiv.style.display = "flex";
   }
-
+})}
 
 // document.addEventListener("DOMContentLoaded", function() {
-joinUsBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-  const joinUs_fullName = document
-    .querySelector("#joinUs_fullName")
-    .value.trim();
-  const joinUs_email = document.querySelector("#joinUs_email").value.trim();
+// joinUsBtn.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   const joinUs_fullName = document
+//     .querySelector("#joinUs_fullName")
+//     .value.trim();
+//   const joinUs_email = document.querySelector("#joinUs_email").value.trim();
 
-  if (!joinUs_fullName || !joinUs_email) {
-    showMessage("PLEASE WRITE YOUR USERNAME AND EMAIL", true);
-  } else if (!joinUs_email.includes("@")) {
-    showMessage("WRITE VALID EMAIL", true);
-  } else {
-    const joinObj = {
-      joinName: joinUs_fullName,
-      joinEmail: joinUs_email,
-    };
-    push(joinUs, joinObj);
-    document.querySelector("#joinUs_fullName").value = "";
-    document.querySelector("#joinUs_email").value = "";
-    showMessage("Successfull process", false);
-    joinUsModalDiv.style.display = "none";
-    console.log("join", joinObj);
-  }
+//   if (!joinUs_fullName || !joinUs_email) {
+//     showMessage("PLEASE WRITE YOUR USERNAME AND EMAIL", true);
+//   } else if (!joinUs_email.includes("@")) {
+//     showMessage("WRITE VALID EMAIL", true);
+//   } else {
+//     const joinObj = {
+//       joinName: joinUs_fullName,
+//       joinEmail: joinUs_email,
+//     };
+//     push(joinUs, joinObj);
+//     document.querySelector("#joinUs_fullName").value = "";
+//     document.querySelector("#joinUs_email").value = "";
+//     showMessage("Successfull process", false);
+//     joinUsModalDiv.style.display = "none";
+//     console.log("join", joinObj);
+//   }
 
 
-});
+// });
 
-document.addEventListener("DOMContentLoaded", function() {
+// document.addEventListener("DOMContentLoaded", function() {
 
 
 
@@ -92,42 +92,24 @@ document.addEventListener("DOMContentLoaded", function() {
         const joinObj={
          joinName:joinUs_fullName,
          joinEmail:joinUs_email
-    
-
-    joinUsBtn.addEventListener("click", function () {
-      joinUsModalDiv.style.display = "none";
-    });
-
-
-
-
         }
         push(joinUs,joinObj)
 
       
-        
-
-
         document.querySelector("#joinUs_fullName").value = ""
     document.querySelector("#joinUs_email").value = ""
         showMessage("Successfull process",false)
         joinUsModalDiv.style.display = "none";
         console.log("join",joinObj);
       }
-
-
-
-     
-
-
-    })})
+    })
+    const joinUs=ref(db,"joinUs")
 
    function setData(collection,data){
     const colRef=ref(db,collection)
    set(colRef,data)
    }
 
-   const joinUs=ref(db,"joinUs")
 
  function pushData(collection,data){
 
@@ -136,34 +118,34 @@ document.addEventListener("DOMContentLoaded", function() {
  }
 
 
-  function showMessage(message, isError) {
-    const messageDiv = document.createElement("div");
-    if (isError) {
-      messageDiv.textContent = "ERROR: " + message;
-      messageDiv.classList.add("message", "error");
-      messageDiv.style.backgroundColor = "red";
-      messageDiv.style.color = "white";
-      messageDiv.style.fontSize = "16px";
+//   function showMessage(message, isError) {
+//     const messageDiv = document.createElement("div");
+//     if (isError) {
+//       messageDiv.textContent = "ERROR: " + message;
+//       messageDiv.classList.add("message", "error");
+//       messageDiv.style.backgroundColor = "red";
+//       messageDiv.style.color = "white";
+//       messageDiv.style.fontSize = "16px";
 
 
-    } else {
-      messageDiv.textContent = message;
-      messageDiv.classList.add("message", "success");
-      messageDiv.style.backgroundColor = "green";
-      messageDiv.style.color = "white";
+//     } else {
+//       messageDiv.textContent = message;
+//       messageDiv.classList.add("message", "success");
+//       messageDiv.style.backgroundColor = "green";
+//       messageDiv.style.color = "white";
 
+//     }
 
+// const joinUs = ref(db, "joinUs");
 
-const joinUs = ref(db, "joinUs");
-
-function pushData(collection, data) {
-  const colRef = ref(db, collection);
-  push(colRef, data);
-}
-function setData(collection, data) {
-  const colRef = ref(db, collection);
-  set(colRef, data);
-}
+// function pushData(collection, data) {
+//   const colRef = ref(db, collection);
+//   push(colRef, data);
+// }
+// function setData(collection, data) {
+//   const colRef = ref(db, collection);
+//   set(colRef, data);
+// }
 
 function showMessage(message, isError) {
   const messageDiv = document.createElement("div");
@@ -197,11 +179,10 @@ function showMessage(message, isError) {
 let hamburgerBtn = document.querySelector(".hamburgerBtn");
 let sideMenu = document.querySelector(".side-menu");
 let closeBtn = document.querySelector(".closeBtn");
-hamburgerBtn.addEventListener("click", function () {
+if(hamburgerBtn){hamburgerBtn.addEventListener("click", function () {
   sideMenu.style.left = "0";
 });
 closeBtn.addEventListener("click", function () {
   sideMenu.style.left = "-675px";
 
-});
-
+})}
