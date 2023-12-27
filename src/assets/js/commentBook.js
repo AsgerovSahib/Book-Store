@@ -143,7 +143,12 @@ bookAbout.innerHTML = result
 
 
 
+let book_url = window.location.hash
+let book_length = book_url.length
+let book_id = book_url.slice(4,book_length)
 
+
+console.log(book_url);
 
 
 
@@ -212,9 +217,7 @@ return
 
 
   // ID = bookID
-// let book_url = window.location.hash
-// let book_length = book_url.length
-// let book_id = book_url.slice(4,book_length)
+
 
 
 
