@@ -189,10 +189,7 @@ const filterData=Object.entries(filterObj)
   }
 
 
-
-//catalog js end//
-
-
 });
+//catalog js end//
 
 
