@@ -105,7 +105,7 @@ swiper3=new Swiper("#swiper3",{
                 <div class="titleDiv">
                 <p class="catalog-slide-author">${bookAuthor}</p> 
                 </div>
-                <button id="${bookID}" class="catalog-readMoreBtn" type="button">Read More</button>
+                <a href="/src/pages/catalog/bookpage.html#id=${bookID}" > <button  class="catalog-readMoreBtn" type="button">Read More</button>  </a>
               </div>
             </div>
                </div>
