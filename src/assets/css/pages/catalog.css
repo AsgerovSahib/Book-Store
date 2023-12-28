@@ -43,29 +43,26 @@ gap: 40px;
 
 }
 .swiper {
-    padding-left: 50px; 
+    padding-left: 35px; 
 display: flex;
     margin-left:11.3% ;
     margin-right: 11.3%;
-    
+    width: 80%;
+    align-items: center;
+    justify-content: center;
 
    
   }
 
   .swiper-slide{
     display: flex;
-    padding-left: 40px;
-    padding: 10px;
-    /* gap: 90px; */
+    padding: 0px;
 
-
-    /* width: 100%; /* veya istediğiniz bir genişlik */
-    /* box-sizing: border-box; */
 
   }
 
   .swiper-slide-container{
-    width:193px ;
+    width: 184px;
     height: 332px;
     display: flex;
     background-color: #fff;
@@ -211,5 +208,6 @@ margin-top: 30px;
 
 #swiper1Books, #swiper3Books, #swiper2Books{
   display: flex;
-gap: 22px;}
+/* gap: 15px; */
+}
 
