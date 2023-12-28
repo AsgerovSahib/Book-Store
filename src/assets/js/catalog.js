@@ -118,6 +118,8 @@ swiper3=new Swiper("#swiper3",{
           
           swiper1.update();
           renderSlider3("books")
+          readTypes("catalog")
+
 
         } catch (error) {
           console.log("err",error);
@@ -179,6 +181,37 @@ const filterData=Object.entries(filterObj)
     }
   });
  }
+
+// for types//
+const catalog_types=document.querySelector("#catalog_types")
+function readTypes(collection) {
+  const readRef = ref(db, collection);
+  onValue(readRef, (snapshot) => {
+    try {
+      const data = snapshot.val();
+      const typesArr = Object.entries(data);
+      console.log("typesArr",typesArr)
+      console.log("ul",catalog_types);
+      let result = typesArr.map((item) => {
+       
+        // const typesID=item[0]
+        const book_types=item[1].bookType
+        return `
+        <li class="catalog_sectionHead_item"><a href="#">${book_types}</a></li>
+       
+        `;
+      })
+catalog_types.innerHTML=result.join("")
+    
+
+    } catch (error) {
+      console.log("err",error);
+    }
+
+
+  });
+}
+
 
 
 

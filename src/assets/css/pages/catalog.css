@@ -9,7 +9,12 @@ body{
     align-items: center;
     margin-top: 123px;
     margin-bottom: 60px;
+    gap:90px;
 
+
+}
+.catalog_sectionHead_nav{
+  width:50%;
 }
 
 .catalog_sectionHead_title{
@@ -19,12 +24,15 @@ body{
     line-height: 196.187%;
     color: var(--mainFontColor);
     margin-left:14.9% ;
-    margin-right: 18.8%;
+    /* margin-right: 8.8%; */
 }
 .catalog_sectionHead_list{
 display: flex;
 flex-direction: row;
 gap: 40px;
+overflow-x:auto;
+white-space: nowrap;
+overflow-y: hidden;
 
 }
 .catalog_sectionHead a{
