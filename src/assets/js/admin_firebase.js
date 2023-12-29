@@ -118,6 +118,11 @@ function readData(collection) {
           <th class="mobil-id">${index + 1}</th>
           <th>${user[1].joinName}</th>
           <th>${user[1].joinEmail}</th>
+          <th>
+            <button class="delete_item" data-id="${item[0]}">
+            <i class="material-icons">&#xe872;</i>
+            </button>
+          </th>
         </tr>`
     );
     join_tbody.innerHTML = result.join("");

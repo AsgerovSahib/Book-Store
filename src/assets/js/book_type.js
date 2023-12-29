@@ -18,10 +18,11 @@ const firebaseConfig = {
   messagingSenderId: "704000816650",
   appId: "1:704000816650:web:1733e6f1c3eae7bca2d1f3",
 };
-// Initialize Firebase
+
+// Firebase'i başlat
 const app = initializeApp(firebaseConfig);
 
-// Initialize Realtime Database and get a reference to the service
+// Gerçek Zamanlı Veritabanını başlat ve servise bir referans al
 const database = getDatabase(app);
 
 const books = ref(database, "books");
@@ -32,14 +33,22 @@ let home_catalogSection_body = document.querySelector(
 
 console.log("home_catalogSection_body", home_catalogSection_body);
 
+let uniqueBookTypes = {}; 
+
 onValue(books, (snapshot) => {
-    const bookData = snapshot.val();
-    let bookDataArr = Object.entries(bookData);
-    let bookType = bookDataArr
-      .map((item, index) => `
-          <button class="home_catalogSection_item">${item[1].bookType}</button>
-      `)
-      .join("");
-    console.log("book type", bookType);
-    home_catalogSection_body.innerHTML = bookType;
+  const bookData = snapshot.val();
+  let bookDataArr = Object.entries(bookData);
+
+
+  bookDataArr.forEach((item) => {
+    uniqueBookTypes[item[1].bookType] = true;
   });
+
+  let bookType = Object.keys(uniqueBookTypes)
+    .map((item) => `
+        <button class="home_catalogSection_item">${item}</button>
+    `)
+    .join("");
+  console.log("kitap türü", bookType);
+  home_catalogSection_body.innerHTML = bookType;
+});
