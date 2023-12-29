@@ -1,6 +1,3 @@
-
-//catalog js start//
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import {
   getDatabase,
@@ -26,7 +23,6 @@ const app = initializeApp(firebaseConfig);
 // Initialize Realtime Database and get a reference to the service
 const db = getDatabase(app);
  
-
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -85,7 +81,6 @@ swiper3=new Swiper("#swiper3",{
             const bookName = item[1]?.bookName || "Undefined Book";
             const bookAuthor=item[1]?.bookAuthor ||"undefined Author"
             const bookID=item[0]
-            console.log("ID",bookID);
            
             return `
             <div class="swiper-slide"   >
@@ -119,9 +114,6 @@ swiper3=new Swiper("#swiper3",{
           swiper1.update();
           renderSlider3("books")
           readTypes("catalog")
-          // changeSlider("books")
-
-
 
         } catch (error) {
           console.log("err",error);
@@ -187,98 +179,74 @@ const catalog_types=document.querySelector("#catalog_types")
 // for types//
 function readTypes(collection) {
   const readRef = ref(db, collection);
-
+  let books = ref(db, "books")
   onValue(readRef, (snapshot) => {
     try {
-
       const data = snapshot.val();
       const typesArr = Object.entries(data);
-      
-      console.log("typesArr",typesArr)
-      console.log("ul",catalog_types);
       let result = typesArr.map((item) => {  
         const book_types=item[1].bookType
         const typesId=item[0]
         return `
-        <li data-id="${typesId}" class="catalog_sectionHead_item">${book_types}</li>
-        `;
+          <li data-id="${typesId}" class="catalog_sectionHead_item">${book_types}</li>
+        `;  
       })
-catalog_types.innerHTML=result.join("")
+      catalog_types.innerHTML = result.join("")
 
-console.log("lii",catalog_sectionHead_item);
+      const catalog_sectionHead_item=document.querySelectorAll(".catalog_sectionHead_item")
+      catalog_sectionHead_item.forEach((typeItem)=>{
+        typeItem.addEventListener("click",function(){
+        onValue(books,(snapshot)=>{
+        try{
 
-//for typeslider start
+        const data=snapshot.val()
+        const filteredArr=Object.values(data).filter((book)=>book.bookType===typeItem.textContent)
 
+        const result2=filteredArr.map((book)=>
+        
+        `<div class="swiper-slide">
+        <div class="swiper-slide-container">
+          <div class="slide_img">
+            <img src="${book?.bookImg}">
+          </div>
+          <div class="${book?.isNew ? 'new_releases' : 'book_isNew'}">
+            ${book?.isNew ? 'New' : ''}
+          </div>
+          <div class="catalog_slide_body">
+            <div class="titleDiv">
+              <p class="catalog_slide_title">${book?.bookName || 'Undefined Book'}</p>
+            </div>
+            <div class="titleDiv">
+              <p class="catalog-slide-author">${book?.bookAuthor || 'Undefined Author'}</p>
+            </div>
+            <a href="/src/pages/catalog/bookpage.html#id=${book?.bookID}">
+              <button class="catalog-readMoreBtn" type="button">Read More</button>
+            </a>
+          </div>
+        </div>
+        </div>`
+        
+        )
+        document.querySelector("#swiper1 .swiper-wrapper").innerHTML = result2.join('');
 
-const catalog_sectionHead_item=document.querySelectorAll(". catalog_sectionHead_item")
+        swiper1.update()
+        initializeSwiper()
+        }catch(err){console.log(err);}
 
-catalog_sectionHead_item.forEach((typeItem)=>{
-typeItem.addEventListener("click",function(){
-onValue(books,(snapshot)=>{
-try{
-
-const data=snapshot.val()
-const filteredArr=Object.values(data).filter((book)=>book.bookType===typeItem.textContent)
-
- const result2=filteredArr.map((book)=>
- 
- `<div class="swiper-slide">
- <div class="swiper-slide-container">
-   <div class="slide_img">
-     <img src="${book?.bookImg}">
-   </div>
-   <div class="${book?.isNew ? 'new_releases' : 'book_isNew'}">
-     ${book?.isNew ? 'New' : ''}
-   </div>
-   <div class="catalog_slide_body">
-     <div class="titleDiv">
-       <p class="catalog_slide_title">${book?.bookName || 'Undefined Book'}</p>
-     </div>
-     <div class="titleDiv">
-       <p class="catalog-slide-author">${book?.bookAuthor || 'Undefined Author'}</p>
-     </div>
-     <a href="/src/pages/catalog/bookpage.html#id=${book?.bookID}">
-       <button class="catalog-readMoreBtn" type="button">Read More</button>
-     </a>
-   </div>
- </div>
-</div>`
- 
- )
- document.querySelector("#swiper1 .swiper-wrapper").innerHTML = result2.join('');
-
-swiper1.update()
-initializeSwiper()
-}catch(err){console.log(err);}
-
-})
-
-}
-)
-
-
-
-})
-
-
-//for typesslider end
-
-
+        })
+      }
+      )
+      })
     } catch (error) {
       console.log("err",error);
     }
   });
 }
 
- readData("books");
-
-} catch (error) {
+readData("books");
+}catch (error) {
     console.error('err', error);
-  }
+}
 
-
-/////////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////////
 
 })
