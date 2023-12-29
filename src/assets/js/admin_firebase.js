@@ -118,9 +118,25 @@ function readData(collection) {
           <th class="mobil-id">${index + 1}</th>
           <th>${user[1].joinName}</th>
           <th>${user[1].joinEmail}</th>
+          <th>
+          <button class="delete_itemUS" data-id="${user[0]}">
+          <i class="material-icons">&#xe872;</i>
+      </button>
+          </th>
+
         </tr>`
     );
     join_tbody.innerHTML = result.join("");
+
+    let delete_item = document.querySelectorAll(".delete_itemUS");
+
+    delete_item.forEach((el) =>
+      el.addEventListener("click", function () {
+        let id = el.dataset.id;
+        console.log(id);
+        deleteUs(id);
+      })
+    );
   });
 }
 readData("joinUs");
@@ -145,11 +161,26 @@ function readContact(collection) {
       <th>${user[1].email}</th>
       <th>${user[1].address}</th>
       <th>${user[1].phone}</th>
+      <th>
+        <button class="delete_itemComment" data-id="${user[0]}">
+          <i class="material-icons">&#xe872;</i>
+        </button>
+      </th>
 
     </tr>`
     );
 
     contactBody.innerHTML = result.join("");
+
+    let delete_item = document.querySelectorAll(".delete_itemComment");
+
+    delete_item.forEach((el) =>
+      el.addEventListener("click", function () {
+        let id = el.dataset.id;
+        console.log(id);
+        deleteComment(id);
+      })
+    );
   });
 }
 readContact("contactUs");
@@ -180,5 +211,15 @@ BookTypeId.addEventListener("change", () => {
 
 function deleteBookDetail(id) {
   let rmv = ref(database, "books/" + id);
+  remove(rmv);
+}
+
+function deleteUs(id) {
+  let rmv = ref(database, "joinUs/" + id);
+  remove(rmv);
+}
+
+function deleteComment(id) {
+  let rmv = ref(database, "contactUs/" + id);
   remove(rmv);
 }

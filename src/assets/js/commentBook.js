@@ -1,22 +1,5 @@
-
-
-
-
-
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-
-import {
-  getDatabase,
-  ref,
-  push,
-  onValue
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
+import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAPS3AigURroTi0Ukx6ajBNNLJdRBHsafc",
@@ -26,284 +9,106 @@ const firebaseConfig = {
     storageBucket: "library-cc233.appspot.com",
     messagingSenderId: "704000816650",
     appId: "1:704000816650:web:1733e6f1c3eae7bca2d1f3",
-  };
+};
 
-
-
-  
-
-
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 const db = getDatabase(app);
 
-console.log(db);
-
-
-const bookAbout = document.querySelector("#bookAbout");
-
-
-function readBook(collection){
-
-
-    const bookRef = ref(db,collection)
-    onValue(bookRef,(snapshot)=>{
-
-const data = snapshot.val()
-
-console.log("data",data);
-
-const info = Object.entries(data)
-
-console.log("info",info);
-
-const result = info.map((item,index)=>{
-
-return  `    <div id="book_page">
-<div class="book_header">
-  <div class="book_text">
-    <a class="back_click" href="">
-      <button class="back_btn">< BACK</button>
-    </a>
-    <a href="">
-      <button id="yearBtn" class="btn_year">2017</button>
-    </a>
-    <p class="book_name">${item[1].bookName}</p>
-    <p class="book_dateAdd">2 days ago added</p>
-    <p class="book_author">${item[1].bookAuthor}</p>
-    <p class="book_infoText">
-      ${item[1].bookDescription
-      }
-    </p>
-
-
-
-
-
-      
-    <form class="comment_form">
-      <input
-        class="comment_input"
-        type="text"
-        placeholder="your anonim comment..."
-        id="commentInput"
-      />
-      <button id="shareBtn" type="submit" onsubmit="formOnSubmit(event)" class="send_btn">
-        <img src="../../assets/icons/images/send.svg" alt="sendImg" />
-      </button>
-    </form>
-
-    <div id="commentMain" class="book_comment">  
-
-<!-- 
-      <div class="nameDate_info">
-
-         <div class="info_user">
-        <p class="user_name">anonim</p>
-        <p class="date">18:32 today</p> 
-
-      </div> 
-
-
-        <div class="comment_title">
-
-          <p>comment title Woah, your project looks awesome! </p>
-        </div>
-       
-      </div> -->
-
-   
-    </div>
-  </div>
-
-
-  
-  <div class="book_img">
-    <img
-      class="book"
-      style="object-fit: cover;"
-      src="${item[1].bookImg}"
-      alt="book"
-    />
-${item[1].isNew === true ?  `<span class="new">new</span>`: "" }
-    
-  </div>
-
-
-</div>
-</div>   `
-
-})
-
-bookAbout.innerHTML = result
-
-    })
+let book_url = window.location.hash;
+let book_length = book_url.length;
+let book_id = book_url.slice(4, book_length);
+const book_name = document.querySelector(".book_name")
+const book_author = document.querySelector(".book_author")
+const book_infoText = document.querySelector(".book_infoText")
+const book = document.querySelector(".book")
+const newD = document.querySelector(".new")
+function readBook(collection) {
+    const bookRef = ref(db, collection);
+    onValue(bookRef, (snapshot) => {
+        const data = snapshot.val();
+        const info = Object.entries(data);
+        let activeBook = info.filter((item) => item[0] == book_id);
+        book_name.innerHTML = activeBook[0][1].bookName
+        book_author.innerHTML = activeBook[0][1].bookAuthor
+        book_infoText.innerHTML = activeBook[0][1].bookDescription
+        book.src = activeBook[0][1].bookImg
+        activeBook[0][1].isNew === true ? newD.classList.add("active") : newD.classList.remove("active")
+    });
 }
-
-
-
-let book_url = window.location.hash
-let book_length = book_url.length
-let book_id = book_url.slice(4,book_length)
-
-
-console.log(book_url);
-
-
-
-
-
-
-
-
-
-
-
-
+readBook("books");
 
 const commentInput = document.querySelector("#commentInput");
-const commentMain = document.querySelector("#commentMain");
-const shareBtn = document.querySelector("#shareBtn");
-
-
-
-let anonim;
-
-async function renderData() {
-  try {
-    const data = await getPosts();
-    console.log("data", data);
-
-    const content = data.reverse().map((comment) => {
-      const dateTime = convertTime(comment.creat);
-
-      return `   <div class="nameDate_info">
-
-        <div class="info_user">
-       <p class="user_name">anonim</p>
-       <p class="date">${dateTime}</p> 
-
-     </div> 
-
-
-       <div class="comment_title">
-
-         <p>${comment.title}</p>
-       </div>
-      
-     </div>   `;
-    });
-
-    commentMain.innerHTML = content;
-
-  } catch (err) {
-    console.log(err);
-  }
-}
-
-
-
-shareBtn.addEventListener("click", async function (event) {
-  event.preventDefault();
-
-  try {
-    const title = commentInput.value.trim();
-
-    if(!title){
-return
-
-    }
-
-
-  // ID = bookID
-
-
-
-
-    commentInput.value = "";
-
-    const newInfo = {
-      anonim,
-      title,
-
-      creat: new Date(),
-    };
-
-    console.log("commentData", newInfo);
-
-    await addPosts(newInfo);
-    renderData();         
-
-  } catch (err) {
-    console.log(err);
-  }
-});
-
-
 const baseUrl = "https://blog-api-t6u0.onrender.com";
 
+async function getPosts() {
+    try {
+        const response = await fetch(baseUrl + "/posts", { method: "GET" });
+        return await response.json();
+    } catch (err) {
+        console.error("Error fetching posts:", err);
+    }
+}
+const commentMain = document.querySelector("#commentMain");
 
-const getPosts = async () => {
-  try {
-    const response = await fetch(baseUrl + "/posts", { method: "GET" });
+async function renderData() {
+    try {
+        const data = await getPosts();
+        const FilteredData = data.filter((item) => item.id == book_id)
+        console.log(FilteredData);
+        const content = FilteredData.map((comment) => (
+            `
+              <div class="nameDate_info">
+                  <div class="info_user">
+                      <p class="user_name">anonim</p>
+                      <p class="date">${convertTime(comment.creat)}</p> 
+                  </div>
+                  <div class="comment_title">
+                      <p>${comment.title}</p>
+                  </div>
+              </div>
+            `
+        )).join('');
 
-    const data = await response.json();
+        commentMain.innerHTML = content;
+    } catch (err) {
+        console.error("Error rendering data:", err);
+    }
+}
+renderData();
 
-    return data;
-  } catch (err) {
-    console.log(err, "err");
+const shareBtn = document.querySelector("#shareBtn")
+shareBtn.addEventListener('click',async function () {
+  const title = commentInput.value.trim();
+  if (title) {
+      const newInfo = {
+          id: book_id,
+          anonim: true, 
+          title,
+          creat: new Date(),
+      };
+      console.log(newInfo);
+      await addPosts(newInfo);
+      renderData()
+      commentInput.value = "";
   }
-};
+})
 
-const addPosts = async (form) => {
-  try {
-    const response = await fetch(baseUrl + "/posts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-
-      body: JSON.stringify(form),
-    });
-
-    const data = await response.json(form);
-
-    console.log(data, "data");
-
-    return data;
-  } catch (err) {
-    console.log(err, "err");
-  }
-};
+async function addPosts(form) {
+    try {
+        const response = await fetch(baseUrl + "/posts", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(form),
+        });
+        return await response.json();
+    } catch (err) {
+        console.error("Error adding post:", err);
+    }
+}
 
 function convertTime(dateFormat) {
-  const date = new Date(dateFormat);
-
-  const timeString = `${String(date.getHours()).padStart(2, "0")}:${String(
-    date.getMinutes()
-  ).padStart(2, "0")}`;
-
-  const dateString = `${String(date.getDate()).padStart(2, "0")}.${String(
-    date.getMonth() + 1
-  ).padStart(2, "0")}.${date.getFullYear()}`;
-
-  const result = `${timeString}  ${dateString}`;
-
-  return result;
+    const date = new Date(dateFormat);
+    const timeString = `${String(date.getHours()).padStart(2, "0")}:${String(date.getMinutes()).padStart(2, "0")}`;
+    const dateString = `${String(date.getDate()).padStart(2, "0")}.${String(date.getMonth() + 1).padStart(2, "0")}.${date.getFullYear()}`;
+    return `${timeString} ${dateString}`;
 }
-
-function formOnSubmit(event) {
-  event.preventDefault();
-  console.log("submit");
-}
-
-
-
-
-
-
-
-
-readBook("books")
-
