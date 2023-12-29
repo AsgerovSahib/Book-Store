@@ -251,11 +251,7 @@ swiper1.update()
 initializeSwiper()
 }catch(err){console.log(err);}
 
-
-
 })
-
-
 
 }
 )
