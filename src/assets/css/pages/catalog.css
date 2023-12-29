@@ -33,6 +33,7 @@ gap: 40px;
 overflow-x:auto;
 white-space: nowrap;
 overflow-y: hidden;
+cursor: pointer;
 
 }
 .catalog_sectionHead a{
