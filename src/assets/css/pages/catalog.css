@@ -1,30 +1,273 @@
 body{
-    background-color: var(--mainColor);
+  background-color: var(--mainColor);
 }
 
 
 .catalog_sectionHead{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    margin-top: 123px;
-    margin-bottom: 60px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 123px;
+  margin-bottom: 60px;
 
 }
 
 .catalog_sectionHead_title{
-    font-size: 25px;
-    font-family: var(--fontMontserrat);
-    font-weight: 900;
-    line-height: 196.187%;
-    color: var(--mainFontColor);
-    margin-left:14.9% ;
-    margin-right: 18.8%;
+  font-size: 25px;
+  font-family: var(--fontMontserrat);
+  font-weight: 900;
+  line-height: 196.187%;
+  color: var(--mainFontColor);
+  margin-left:14.9% ;
+  margin-right: 18.8%;
 }
 .catalog_sectionHead_list{
 display: flex;
 flex-direction: row;
 gap: 40px;
+
+}
+.catalog_sectionHead a{
+  text-decoration: none;
+  color: var(--mainFontColor);
+}
+
+
+/* swiper css............................................................ */
+
+
+
+.catalog_sliderSection{
+margin-bottom: 100px;
+position: relative;
+
+}
+.swiper {
+  padding-left: 25px; 
+display: flex;
+  margin-left:10% ;
+  margin-right: 11.3%;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+
+ 
+}
+
+.swiper-slide{
+  display: flex;
+  padding: 0px;
+
+
+}
+
+.swiper-slide-container{
+  width: 184px;
+  height: 332px;
+  display: flex;
+  background-color: #fff;
+   flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  /* top: 40px; */
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+.slide_img{
+width: 134px;
+background-color: #EB5757;
+height: 179px;
+object-fit: cover;
+margin-bottom: 15px;
+text-align: center;
+object-fit: cover;
+margin-left: 25px;
+margin-right: 25px;
+}
+
+.slide_img img{
+  width: 100%;
+  height: 100%;
+
+
+}
+.catalog_slide_body{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.catalog_slide_title{
+  font-size: 14px;
+  font-family: var(--fontMontserrat);
+  font-weight: 700;
+  line-height: 196.187%;
+  color: var(--mainFontColor);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+ /* ::-webkit-scrollbar-button {
+  background-color: #888;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+} */ 
+
+
+.catalog-slide-author{
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 196.187%;
+  color: var(--mainFontColor);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+.catalog-readMoreBtn{
+  background-color: var(--mainOrange);
+  color: #fff ;
+  font-family: var(--fontMontserrat);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 196.187%;
+  text-transform: uppercase;
+  padding-left: 27px;
+  padding-right: 27px;
+  height: 29px;
+  border: none;
+  box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
+border-radius: 3px;
+cursor: pointer;
+/* margin-bottom: 20px; */
+}
+
+.swiper-button-next{
+  color: var(--mainRed);
+margin-right: 6%;
+margin-top: 30px;
+z-index: 1000;
+
+}
+.swiper-button-prev{
+  color: var(--mainRed);
+margin-left: 7%;
+margin-top: 30px;
+}
+#swiper1next,#swiper1prev{
+  margin-top: 0px;
+}
+.titleDiv {
+  overflow-y: auto; /* Yatay (horizontal) scrollbar'ı aktif etmek için "auto" kullanabilirsiniz */
+  /* max-height: 50px; 
+  min-height: 50px; */
+  max-width: 136px; 
+  max-width: 136px;
+    overflow: hidden;
+  white-space: nowrap;
+  padding: 0px;
+}
+.section_title{
+  font-family: var(--fontMontserrat);
+  font-size: 25px;
+  font-weight: 900;
+  line-height: 196.187%;
+  display: flex;
+  color: var(--mainFontColor);
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+ 
+}
+.book_isNew{
+ background-color:#EB5757;
+  position: absolute;
+  right: 0px;
+  top:0px;
+  width: 47px;
+  height: 13.5px;
+  font-size: 9px;
+  font-weight: 900;
+  font-family: var(--fontMontserrat);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  visibility: hidden;
+}
+
+.new_releases{
+  background-color:#EB5757;
+  position: absolute;
+  right: 0px;
+  top:0px;
+  width: 47px;
+  height: 13.5px;
+  font-size: 9px;
+  font-weight: 900;
+  font-family: var(--fontMontserrat);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  visibility: visible;
+
+}
+
+
+#swiper1Books, #swiper3Books, #swiper2Books{
+display: flex;
+/* gap: 15px; */
+}
+
+.catalog_sectionHead_item{
+  cursor: pointer;
+}
+
+@media screen and (max-width:767px){
+  body {
+    overflow-x: hidden; }
+
+
+
+
+  .catalog_sectionHead{
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 123px;
+    margin-bottom: 60px;
+    gap:90px;
+    background-color: blue;
+
+
+}
+.catalog_sectionHead_nav{
+}
+
+.catalog_sectionHead_title{
+    font-size: 23px;
+    font-family: var(--fontMontserrat);
+    font-weight: 900;
+    line-height: 196.187%;
+    color: var(--mainFontColor);
+    /* margin-left:14.9% ; */
+    /* margin-right: 8.8%; */
+}
+.catalog_sectionHead_list{
+display: flex;
+flex-direction: row;
+gap: 40px;
+overflow-x:auto;
+white-space: nowrap;
+overflow-y: hidden;
+cursor: pointer;
 
 }
 .catalog_sectionHead a{
@@ -40,117 +283,40 @@ gap: 40px;
 .catalog_sliderSection{
   margin-bottom: 100px;
   position: relative;
+ background-color: blanchedalmond;
+/* margin-left: 60px; */
 
 }
 .swiper {
-    padding-left: 35px; 
+    /* padding-left: 35px;  */
 display: flex;
-    margin-left:11.3% ;
-    margin-right: 11.3%;
-    width: 80%;
-    align-items: center;
-    justify-content: center;
-
-   
+    /* margin-right: 11.3%;
+    width: 100%;
+    /* align-items: center; */
+   /* gap:90px; */
   }
 
   .swiper-slide{
     display: flex;
     padding: 0px;
+    background-color: cadetblue;
+    /* padding-left: 90px; */
+    /* align-items: center; */
+/* width: 100%; */
+gap: 90px;
 
 
   }
-
-  .swiper-slide-container{
-    width: 184px;
-    height: 332px;
-    display: flex;
-    background-color: #fff;
-     flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-    /* top: 40px; */
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
-    position: relative;
-  }
-  .slide_img{
-width: 134px;
-background-color: #EB5757;
-height: 179px;
-object-fit: cover;
-margin-bottom: 15px;
-text-align: center;
-object-fit: cover;
-margin-left: 25px;
-margin-right: 25px;
-  }
-
-.slide_img img{
-    width: 100%;
-    height: 100%;
-
-
-}
-  .catalog_slide_body{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
-
-  .catalog_slide_title{
-    font-size: 14px;
-    font-family: var(--fontMontserrat);
-    font-weight: 700;
-    line-height: 196.187%;
-    color: var(--mainFontColor);
-   
-
-  }
- 
-  .catalog-slide-author{
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 196.187%;
-    color: var(--mainFontColor);
-  }
-  .catalog-readMoreBtn{
-    background-color: var(--mainOrange);
-    color: #fff ;
-    font-family: var(--fontMontserrat);
-    font-size: 12px;
-    font-weight: 900;
-    line-height: 196.187%;
-    text-transform: uppercase;
-    padding-left: 27px;
-    padding-right: 27px;
-    height: 29px;
-    border: none;
-    box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
-border-radius: 3px;
-cursor: pointer;
-/* margin-bottom: 20px; */
-  }
-
   .swiper-button-next{
-    color: var(--mainRed);
-margin-right: 6%;
-margin-top: 30px;
-z-index: 1000;
+  display: none;
 
 }
   .swiper-button-prev{
-    color: var(--mainRed);
-margin-left: 7%;
-margin-top: 30px;
+  display: none;
   }
-  #swiper1next,#swiper1prev{
-    margin-top: 0px;
-  }
+  
   .titleDiv {
-    overflow-y: auto; /* Yatay (horizontal) scrollbar'ı aktif etmek için "auto" kullanabilirsiniz */
-    /* max-height: 50px; 
-    min-height: 50px; */
+    overflow-y: auto; 
     max-width: 136px; 
     max-width: 136px;
       overflow: hidden;
@@ -208,6 +374,6 @@ margin-top: 30px;
 
 #swiper1Books, #swiper3Books, #swiper2Books{
   display: flex;
-/* gap: 15px; */
-}
+  gap: 90px;
+}}
 
